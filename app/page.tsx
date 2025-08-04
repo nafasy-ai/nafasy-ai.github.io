@@ -181,7 +181,8 @@ export default function NafasyAI() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
             <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm text-blue-800 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:scale-105 hover:bg-blue-200/80">
-              <Award className="w-4 h-4 mr-2 animate-pulse" />
+              <Award className={`w-4 h-4 animate-pulse ${isArabic ? "ml-2" : "mr-2"}`} />
+
               {isArabic ? "تقنية حاصلة على براءة اختراع" : "Patented AI Technology"}
             </div>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
@@ -273,61 +274,63 @@ export default function NafasyAI() {
 
 
       {/* About Section */}
-      <section id="about" className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Text Section */}
-            <div
-              className={`${isArabic ? "order-2 lg:order-1 text-right" : "order-1 lg:order-1 text-left"
-                } animate-in fade-in slide-in-from-left duration-1000`}
-            >
-              <h3
-                className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : ""
-                  }`}
-              >
-                {isArabic ? "من نحن" : "About Us"}
-              </h3>
-              <p
-                className={`text-lg text-gray-600 mb-6 leading-relaxed ${isArabic ? "text-right" : ""
-                  }`}
-              >
-                {isArabic
-                  ? "نحن رواد في إحداث تحول عالمي في فحوصات الصحة. من خلال تسخير قوة الذكاء الاصطناعي وبساطة الهاتف الذكي، نقدم كشفًا فوريًا ومنخفض التكلفة وغير جراحي للحالات التنفسية. مهمتنا هي تمكين المرضى والأطباء والحكومات من خلال تكنولوجيا متقدمة وسهلة الوصول، لجعل الرعاية الصحية الاستباقية حقيقة للجميع."
-                  : "We are pioneering a global transformation in health screening. By harnessing the power of artificial intelligence and the simplicity of a smartphone, we deliver real-time, low-cost, and non-invasive detection of respiratory conditions. Our mission is to empower patients, clinicians, and governments with superior, accessible technology, making proactive healthcare a reality for all."}
-              </p>
-              <div
-                className={`flex items-center group ${isArabic
-                    ? "flex-row-reverse space-x-reverse space-x-4 justify-end"
-                    : "flex-row space-x-4"
-                  }`}
-              >
-                <CheckCircle className="h-6 w-6 text-green-500 transition-transform duration-300 group-hover:scale-110" />
-                <span className="text-gray-700 font-medium transition-colors duration-300 group-hover:text-green-600">
-                  {isArabic ? "تقنية حاصلة على براءة اختراع" : "Patented Technology"}
-                </span>
-              </div>
-            </div>
+<section id="about" className="py-20 relative">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      {/* Text Section */}
+      <div
+        className={`${isArabic ? "order-1 lg:order-2 text-right" : "order-1 lg:order-1 text-left"}
+          animate-in fade-in slide-in-from-left duration-1000`}
+      >
+        <h3
+          className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : ""}`}
+        >
+          {isArabic ? "من نحن" : "About Us"}
+        </h3>
+        <p
+          className={`text-lg text-gray-600 mb-6 leading-relaxed ${isArabic ? "text-right" : ""}`}
+        >
+          {isArabic
+            ? "نحن رواد في إحداث تحول عالمي في فحوصات الصحة. من خلال تسخير قوة الذكاء الاصطناعي وبساطة الهاتف الذكي، نقدم كشفًا فوريًا ومنخفض التكلفة وغير جراحي للحالات التنفسية. مهمتنا هي تمكين المرضى والأطباء والحكومات من خلال تكنولوجيا متقدمة وسهلة الوصول، لجعل الرعاية الصحية الاستباقية حقيقة للجميع."
+            : "We are pioneering a global transformation in health screening. By harnessing the power of artificial intelligence and the simplicity of a smartphone, we deliver real-time, low-cost, and non-invasive detection of respiratory conditions. Our mission is to empower patients, clinicians, and governments with superior, accessible technology, making proactive healthcare a reality for all."}
+        </p>
 
-            {/* Image Section */}
-            <div
-              className={`${isArabic ? "order-1 lg:order-2" : "order-2 lg:order-2"
-                } relative animate-in fade-in slide-in-from-right duration-1000`}
-            >
-              <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
-                <img
-                  src="/images/dubai-heatmap.png"
-                  alt={
-                    isArabic
-                      ? "خريطة حرارية لانتشار الأمراض التنفسية في دبي"
-                      : "Respiratory disease heatmap in Dubai"
-                  }
-                  className="w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-[1.02]"
-                />
-              </div>
-            </div>
-          </div>
+        {/* CheckCircle with Text */}
+        <div
+          className={`flex items-center group ${
+            isArabic
+              ? "justify-start space-x-reverse space-x-3"
+              : "flex-row space-x-3"
+          }`}
+        >
+          <CheckCircle className="h-6 w-6 text-green-500 transition-transform duration-300 group-hover:scale-110" />
+          <span className="text-gray-700 font-medium transition-colors duration-300 group-hover:text-green-600">
+            {isArabic ? "تقنية حاصلة على براءة اختراع" : "Patented Technology"}
+          </span>
         </div>
-      </section>
+      </div>
+
+      {/* Image Section */}
+      <div
+        className={`${isArabic ? "order-1 lg:order-2" : "order-2 lg:order-2"}
+          relative animate-in fade-in slide-in-from-right duration-1000`}
+      >
+        <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <img
+            src="/images/dubai-heatmap.png"
+            alt={
+              isArabic
+                ? "خريطة حرارية لانتشار الأمراض التنفسية في دبي"
+                : "Respiratory disease heatmap in Dubai"
+            }
+            className="w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-[1.02]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
   {/* Technology Section */}
@@ -461,8 +464,8 @@ export default function NafasyAI() {
                   <div
                     key={index}
                     className={`flex items-start group animate-in fade-in slide-in-from-left ${
-                      isArabic
-                        ? "flex-row-reverse text-right space-x-reverse space-x-4"
+                      isArabic 
+                        ? "justify-start space-x-reverse space-x-3"
                         : "flex-row text-left space-x-4"
                     }`}
                     style={{ animationDelay: `${index * 200}ms` }}
@@ -686,12 +689,18 @@ export default function NafasyAI() {
 
           <Card className="border-0 shadow-xl bg-gradient-to-r from-blue-50 to-cyan-50 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-in fade-in slide-in-from-bottom duration-1000">
             <CardHeader>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-green-600">
-                  {isArabic ? "أحدث الأخبار" : "Latest Update"}
-                </span>
-              </div>
+             <div
+
+  className={`flex items-center mb-4 ${
+    isArabic ? "justify-start space-x-reverse space-x-3" : "flex-row space-x-3"
+  }`}
+>
+  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+  <span className="text-sm font-medium text-green-600">
+    {isArabic ? "أحدث الأخبار" : "Latest Update"}
+  </span>
+</div>
+
               <CardTitle className="text-2xl transition-colors duration-300 hover:text-blue-600">
                 {isArabic ? "عرض في أسبوع أبوظبي العالمي للصحة 2025" : "Showcased at Abu Dhabi Global Health Week 2025"}
               </CardTitle>
