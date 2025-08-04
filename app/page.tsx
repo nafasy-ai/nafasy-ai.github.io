@@ -240,26 +240,37 @@ export default function NafasyAI() {
 
       {/* Stats Section */}
       <section className="py-16 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "256,600+", label: isArabic ? "مريض تم اختبارهم" : "PCR-Tested Patients" },
-              { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
-              { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
-              { number: "3", label: isArabic ? "جامعات رائدة" : "Leading Universities" },
-            ].map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
-                  {stat.number}
-                </div>
-                <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        { number: "256,600+", label: isArabic ? "مريض تم اختبارهم" : "PCR-Tested Patients" },
+        { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
+        { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
+        { number: "3", label: isArabic ? "جامعات رائدة" : "Leading Universities" },
+      ].map((stat, index) => {
+        // Function to convert digits to Arabic numerals
+        const toArabicNumbers = (num) => {
+          const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+          return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
+        };
+
+        const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
+
+        return (
+          <div key={index} className="text-center group">
+            <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
+              {displayNumber}
+            </div>
+            <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
+              {stat.label}
+            </div>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
 
       {/* About Section */}
       <section id="about" className="py-20 relative">
@@ -319,92 +330,103 @@ export default function NafasyAI() {
       </section>
 
 
-      {/* Technology Section */}
-      <section id="technology" className="py-20 bg-white/80 backdrop-blur-sm">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              icon: <Globe className="h-8 w-8 text-blue-600" />,
-              image: require("@/public/images/H1.jpg"),
-              imageAlt: isArabic ? "طفل مريض" : "Sick child",
-              title: isArabic ? "مجموعة بيانات ضخمة" : "Massive Dataset",
-              description: isArabic
-                ? "أكثر من 256,600 مريض تم اختبارهم عبر فحص PCR"
-                : "256,600+ PCR-tested patients ensuring robustness and accuracy",
-            },
-            {
-              icon: <Award className="h-8 w-8 text-blue-600" />,
-              title: isArabic ? "أداء رائد" : "Breakthrough Performance",
-              description: isArabic
-                ? "دقة تصل إلى 84٪ في الكشف عن فيروس كوفيد-19"
-                : "84% accuracy for COVID-19 screening demonstrating our technology power",
-            },
-            {
-              icon: <CheckCircle className="h-8 w-8 text-blue-600" />,
-              title: isArabic ? "آمن حسب التصميم" : "Secure by Design",
-              description: isArabic
-                ? "بنية تحتية سحابية آمنة مع الالتزام بلوائح الإمارات"
-                : "Secure cloud infrastructure compliant with UAE Federal Data Protection Law",
-            },
-            {
-              icon: <Users className="h-8 w-8 text-blue-600" />,
-              title: isArabic ? "تم التحقق منه حكوميًا" : "Government Vetted",
-              description: isArabic
-                ? "عقد بحث وتطوير مع وزارة الصحة الأمريكية"
-                : "R&D contract with U.S. Department of Health and Human Services BARDA",
-            },
-            {
-              icon: <Globe className="h-8 w-8 text-blue-600" />,
-              title: isArabic ? "تطبيق فعلي" : "Real-World Application",
-              description: isArabic
-                ? "تم إصدار التطبيق التجريبي لـ 4,500 مستخدم في كولومبيا"
-                : "Beta application released to 4,500 users in Colombia proving viability",
-            },
-            {
-              icon: <Award className="h-8 w-8 text-blue-600" />,
-              title: isArabic ? "شراكات أكاديمية" : "Academic Partnerships",
-              description: isArabic
-                ? "تعاون مع جامعتي ستانفورد وواشنطن"
-                : "Co-developed with Stanford University and University of Washington",
-            },
-          ].map((feature, index) => (
-            <Card
-              key={index}
-              className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-white to-blue-50 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <CardHeader className={isArabic ? "text-right flex flex-col items-center" : ""}>
-                {/* Arabic: Icon on top, centered; English: stays default */}
-                <div
-                  className={`mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${isArabic ? "flex justify-center mb-6" : ""
-                    }`}
-                >
-                  {feature.icon}
-                </div>
-                <CardTitle className="text-xl transition-colors duration-300 group-hover:text-blue-600">
-                  {feature.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className={isArabic ? "text-right" : ""}>
-                <CardDescription
-                  className={`text-gray-600 text-base leading-relaxed ${isArabic ? "text-justify" : ""
-                    }`}
-                >
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+  {/* Technology Section */}
+<section id="technology" className="py-20 bg-white/80 backdrop-blur-sm">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Section Heading */}
+    <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
+      <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600">
+        {isArabic ? "تقنيتنا" : "Our Technology"}
+      </h3>
+    </div>
 
-      </section>
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          icon: <Globe className="h-8 w-8 text-blue-600" />,
+          image: require("@/public/images/H1.jpg"),
+          imageAlt: isArabic ? "طفل مريض" : "Sick child",
+          title: isArabic ? "مجموعة بيانات ضخمة" : "Massive Dataset",
+          description: isArabic
+            ? "أكثر من 256,600 مريض تم اختبارهم عبر فحص PCR"
+            : "256,600+ PCR-tested patients ensuring robustness and accuracy",
+        },
+        {
+          icon: <Award className="h-8 w-8 text-blue-600" />,
+          title: isArabic ? "أداء رائد" : "Breakthrough Performance",
+          description: isArabic
+            ? "دقة تصل إلى 84٪ في الكشف عن فيروس كوفيد-19"
+            : "84% accuracy for COVID-19 screening demonstrating our technology power",
+        },
+        {
+          icon: <CheckCircle className="h-8 w-8 text-blue-600" />,
+          title: isArabic ? "آمن حسب التصميم" : "Secure by Design",
+          description: isArabic
+            ? "بنية تحتية سحابية آمنة مع الالتزام بلوائح الإمارات"
+            : "Secure cloud infrastructure compliant with UAE Federal Data Protection Law",
+        },
+        {
+          icon: <Users className="h-8 w-8 text-blue-600" />,
+          title: isArabic ? "تم التحقق منه حكوميًا" : "Government Vetted",
+          description: isArabic
+            ? "عقد بحث وتطوير مع وزارة الصحة الأمريكية"
+            : "R&D contract with U.S. Department of Health and Human Services BARDA",
+        },
+        {
+          icon: <Globe className="h-8 w-8 text-blue-600" />,
+          title: isArabic ? "تطبيق فعلي" : "Real-World Application",
+          description: isArabic
+            ? "تم إصدار التطبيق التجريبي لـ 4,500 مستخدم في كولومبيا"
+            : "Beta application released to 4,500 users in Colombia proving viability",
+        },
+        {
+          icon: <Award className="h-8 w-8 text-blue-600" />,
+          title: isArabic ? "شراكات أكاديمية" : "Academic Partnerships",
+          description: isArabic
+            ? "تعاون مع جامعتي ستانفورد وواشنطن"
+            : "Co-developed with Stanford University and University of Washington",
+        },
+      ].map((feature, index) => (
+        <Card
+          key={index}
+          className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 bg-gradient-to-br from-white to-blue-50 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom"
+          style={{ animationDelay: `${index * 100}ms` }}
+        >
+          <CardHeader className={isArabic ? "text-right flex flex-col items-center" : ""}>
+            {/* Icon */}
+            <div
+              className={`mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 ${
+                isArabic ? "flex justify-center mb-6" : ""
+              }`}
+            >
+              {feature.icon}
+            </div>
+            <CardTitle className="text-xl transition-colors duration-300 group-hover:text-blue-600">
+              {feature.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent className={isArabic ? "text-right" : ""}>
+            <CardDescription
+              className={`text-gray-600 text-base leading-relaxed ${
+                isArabic ? "text-justify" : ""
+              }`}
+            >
+              {feature.description}
+            </CardDescription>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
 
       {/* Vision Section */}
       <section id="vision" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className={`${isArabic ? "order-2" : "order-1"} animate-in fade-in slide-in-from-left duration-1000`}>
+            <div className={`${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-left duration-1000`}>
               <h3
                 className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : "text-left"}`}
               >
@@ -685,7 +707,7 @@ export default function NafasyAI() {
         </div>
       </section>
 
-      {/* Partners Section */}
+    {/* Partners Section */}
       <section id="partners" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
@@ -693,11 +715,10 @@ export default function NafasyAI() {
               {isArabic ? "الشركاء" : "Our Partners"}
             </h3>
           </div>
-
           <Card className="border-0 shadow-xl transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl animate-in fade-in slide-in-from-bottom duration-1000">
             <CardContent className="p-8">
               <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div className={isArabic ? "order-2" : "order-1"}>
+                <div className={isArabic ? "order-1" : "order-2"}>
                   <h4 className="text-2xl font-bold text-gray-900 mb-4 transition-colors duration-300 hover:text-blue-600">
                     {isArabic ? "شراكات استراتيجية" : "Strategic Partnerships"}
                   </h4>
@@ -705,7 +726,7 @@ export default function NafasyAI() {
                     {isArabic
                       ? 'المشروع هو جزء من برنامج تطوير المشاريع "نماذج من أجل الإنسانية" في دبي، ويتعاون مع جامعة محمد بن راشد للطب والعلوم الصحية (MBRU) وجامعة واشنطن.'
                       : "Part of Dubai-based Prototypes for Humanity venture development programme, collaborating with Mohammed Bin Rashid University of Medicine and Health Sciences (MBRU) and University of Washington faculty."}
-                  </p>
+                 </p>
                 </div>
                 <div className={`grid grid-cols-2 gap-4 ${isArabic ? "order-1" : "order-2"}`}>
                   {["MBRU", "UW", "Dubai Health", "P4H"].map((partner, index) => (
@@ -714,6 +735,7 @@ export default function NafasyAI() {
                       className="bg-gray-50 rounded-lg p-4 text-center transition-all duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-md animate-in fade-in slide-in-from-bottom"
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
+                     
                       <p className="text-sm font-medium">{partner}</p>
                     </div>
                   ))}
@@ -723,7 +745,6 @@ export default function NafasyAI() {
           </Card>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -743,22 +764,6 @@ export default function NafasyAI() {
               ? "كن جزءًا من الثورة في فحص الأمراض التنفسية بالذكاء الاصطناعي"
               : "Be part of the revolution in AI-powered respiratory disease screening"}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
-            <Button
-              size="lg"
-              variant="secondary"
-              className="text-lg px-8 py-4 bg-white text-blue-600 hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-lg group"
-            >
-              {isArabic ? "تواصل معنا" : "Contact Us"}
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-blue-600 bg-transparent transition-all duration-300 hover:scale-105 hover:shadow-lg group"
-            >
-              {isArabic ? "اعرف المزيد" : "Learn More"}
-            </Button>
-          </div>
         </div>
       </section>
 
