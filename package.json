@@ -1,15 +1,13 @@
 {
-  "homepage": "https://nafasa-ai.github.io/new-nafasa.ai",
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build & next export",
+    "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
