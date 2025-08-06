@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import { ArrowRight, Play, CheckCircle, Users, Globe, Award, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {withBasePath} from '../utils/basePath';
 export default function NafasyAI() {
   const [language, setLanguage] = useState<"english" | "arabic">("english")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -224,7 +225,7 @@ export default function NafasyAI() {
             <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl p-1 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
               <div className="bg-white rounded-xl p-8">
                 <img
-                  src="/images/ai-respiratory-screening-process.png"
+                  src={withBasePath('/images/ai-respiratory-screening-process.pn')}
                   alt={
                     isArabic
                       ? "عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
@@ -316,7 +317,7 @@ export default function NafasyAI() {
       >
         <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
           <img
-            src="/images/dubai-heatmap.png"
+            src={withBasePath('/images/dubai-heatmap.png')}
             alt={
               isArabic
                 ? "خريطة حرارية لانتشار الأمراض التنفسية في دبي"
@@ -495,7 +496,7 @@ export default function NafasyAI() {
             >
               <div className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
                 <img
-                  src="/images/ai-respiratory-screening-process.png"
+                  src={withBasePath('/images/ai-respiratory-screening-process.png')}
                   alt={
                     isArabic
                       ? "مخطط عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
@@ -531,42 +532,42 @@ export default function NafasyAI() {
                 description: isArabic
                   ? "فحص سريع لملايين الحجاج في مناسبات مثل الحج والعمرة للكشف عن الإنفلونزا وRSV وكوفيد-19 قبل حدوث تفشي المرض."
                   : "Rapidly screen millions of pilgrims at events like Hajj and Umrah to detect flu, RSV, and COVID-19 before outbreaks can occur",
-                image: "/images/H1.jpg",
+                image: withBasePath('/images/H1.jpg'),
               },
               {
                 title: isArabic ? "المطارات ونقاط الحدود" : "Airports & Border Control",
                 description: isArabic
                   ? "تنفيذ فحوصات مستهدفة للمسافرين من المناطق عالية الخطورة لتقليل استيراد الأمراض المعدية."
                   : "Implement targeted screening of passengers from high-risk regions to reduce the importation of infectious diseases",
-                image: "/images/A1.jpg",
+                image: withBasePath('/images/A1.jp'),
               },
               {
                 title: isArabic ? "المؤسسات التعليمية" : "Educational Institutions",
                 description: isArabic
                   ? "تسهيل الفحص المنتظم في المدارس ورياض الأطفال للكشف عن العدوى قبل انتشارها على نطاق واسع بين الأطفال وعائلاتهم."
                   : "Facilitate regular screening in schools and early childhood settings to detect infections before they spread widely among children and their families",
-                image: "/images/E1.jpg",
+                image: withBasePath('/images/E1.jpg'),
               },
               {
                 title: isArabic ? "الرعاية الصحية والتأمين" : "Healthcare & Insurance",
                 description: isArabic
                   ? "الدمج في سير العمل بالمستشفيات والعيادات لفحص المرضى الذين يعانون من أعراض تنفسية قبل الانتقال إلى اختبارات أكثر تكلفة، مما يحسن الكفاءة من حيث التكلفة."
                   : "Integrate into hospital and clinic workflows to prescreen patients with respiratory symptoms before escalating to more expensive tests, improving cost-efficiency",
-                image: "/images/hospital-waiting-room.png",
+                image: withBasePath('/images/hospital-waiting-room.png'),
               },
               {
                 title: isArabic ? "الطب عن بُعد والرعاية الصحية النائية" : "Telemedicine & Remote Healthcare",
                 description: isArabic
                   ? "تعزيز الاستشارات الافتراضية من خلال تمكين الكشف المبكر عن التهابات الجهاز التنفسي، مما يسمح لأولئك في المناطق النائية بالوصول إلى الرعاية الصحية الحرجة."
                   : "Enhance virtual consultations by enabling early detection of respiratory infections, allowing those in remote areas to access critical healthcare",
-                image: "/images/TM1.jpg",
+                image: withBasePath('/images/TM1.jpg'),
               },
               {
                 title: isArabic ? "الشركات والمكاتب" : "Corporate & Offices",
                 description: isArabic
                   ? "فحص الموظفين للحفاظ على بيئة عمل آمنة وتقليل انتشار الأمراض التنفسية في مكان العمل."
                   : "Employee screening for safe workplace environments and reducing the spread of respiratory diseases in the workplace",
-                image: "/images/O1.jpg",
+                image: withBasePath('/images/O1.jpg'),
               },
             ].map((useCase, index) => (
               <Card
@@ -620,7 +621,7 @@ export default function NafasyAI() {
                   ? "خريج متميز في علوم الحاسوب من جامعة كاليفورنيا بيركلي مع أكثر من عشر سنوات من الخبرة"
                   : "Top computer science graduate from UC Berkeley with over a decade of experience in software development",
                 linkedin: "https://www.linkedin.com/in/amilkhanzada",
-                image: "/images/amil-khanzada.png",
+                image: withBasePath('/images/amil-khanzada.png'),
               },
               {
                 name: isArabic ? "البروفيسور ليس أطلس" : "Prof. Les Atlas",
@@ -629,7 +630,7 @@ export default function NafasyAI() {
                   ? "أستاذ الهندسة الكهربائية في جامعة واشنطن وزميل مدى الحياة في IEEE"
                   : "Electrical Engineering Professor at University of Washington and IEEE Life Fellow",
                 linkedin: "https://people.ece.uw.edu/atlas/",
-                image: "/images/prof-les-atlas.png",
+                image: withBasePath('/images/prof-les-atlas.png'),
               },
               {
                 name: isArabic ? "تامر فهمي" : "Tamer Fahmy",
@@ -638,7 +639,7 @@ export default function NafasyAI() {
                   ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية"
                   : "Experienced advisor with over 20 years in healthcare industry at Philips and Dräger",
                 linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
-                image: "/images/tamer-fahmy.png",
+                image: withBasePath('/images/tamer-fahmy.png'),
               },
             ].map((leader, index) => (
               <Card
