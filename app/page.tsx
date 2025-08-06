@@ -539,7 +539,7 @@ export default function NafasyAI() {
                 description: isArabic
                   ? "تنفيذ فحوصات مستهدفة للمسافرين من المناطق عالية الخطورة لتقليل استيراد الأمراض المعدية."
                   : "Implement targeted screening of passengers from high-risk regions to reduce the importation of infectious diseases",
-                image: withBasePath('/images/A1.jp'),
+                image: withBasePath('/images/A1.jpg'),
               },
               {
                 title: isArabic ? "المؤسسات التعليمية" : "Educational Institutions",
