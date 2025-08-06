@@ -11,8 +11,8 @@ const nextConfig = {
   },
   output: 'export',
   distDir: 'out',
-  basePath: '', // Important!
-  assetPrefix: '',
+  basePath: '/new-nafasa.ai', // Important!
+  assetPrefix: '/new-nafasa.ai/', 
 }
 
 export default nextConfig

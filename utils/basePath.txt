@@ -1,0 +1,1 @@
+export const withBasePath = (path: string) => `/new-nafasa.ai${path}`;
