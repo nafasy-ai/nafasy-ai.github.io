@@ -225,7 +225,7 @@ export default function NafasyAI() {
             <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl p-1 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
               <div className="bg-white rounded-xl p-8">
                 <img
-                  src={withBasePath('/images/ai-respiratory-screening-process.pn')}
+                  src={withBasePath('/images/ai-respiratory-screening-process.png')}
                   alt={
                     isArabic
                       ? "عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
