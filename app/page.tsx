@@ -180,11 +180,7 @@ export default function NafasyAI() {
       <section className="py-20 lg:py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm text-blue-800 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:scale-105 hover:bg-blue-200/80">
-              <Award className={`w-4 h-4 animate-pulse ${isArabic ? "ml-2" : "mr-2"}`} />
-
-              {isArabic ? "تقنية حاصلة على براءة اختراع" : "Patented AI Technology"}
-            </div>
+            
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
               {isArabic ? (
                 <>
