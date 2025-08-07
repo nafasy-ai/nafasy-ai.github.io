@@ -237,37 +237,36 @@ export default function NafasyAI() {
 
       {/* Stats Section */}
       <section className="py-16 bg-white/80 backdrop-blur-sm">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-      {[
-        { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
-        { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
-        { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
-        // { number: "3", label: isArabic ? "جامعات رائدة" : "Leading Universities" },
-      ].map((stat, index) => {
-        const toArabicNumbers = (num) => {
-          const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
-          return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
-        };
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
+              { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
+              { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
+            ].map((stat, index) => {
+              const toArabicNumbers = (num) => {
+                const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+                return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
+              };
 
-        const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
+              const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
 
-        return (
-          <div key={index} className="text-center group">
-            <div className="flex flex-col items-center">
-              <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
-                {displayNumber}
-              </div>
-              <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
-                {stat.label}
-              </div>
-            </div>
+              return (
+                <div key={index} className="text-center group">
+                  <div className="flex flex-col items-center">
+                    <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
+                      {displayNumber}
+                    </div>
+                    <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
+                      {stat.label}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
 
@@ -324,8 +323,6 @@ export default function NafasyAI() {
           </div>
         </div>
       </section>
-
-
       {/* Technology Section */}
       <section id="technology" className="py-20 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -613,8 +610,8 @@ export default function NafasyAI() {
                 name: isArabic ? "البروفيسور ليس أطلس" : "Prof. Les Atlas",
                 role: isArabic ? "الشريك المؤسس والمدير التقني" : "Co-Founder & CTO",
                 description: isArabic
-                  ? "أستاذ الهندسة الكهربائية في جامعة واشنطن وزميل مدى الحياة في IEEE"
-                  : "Electrical Engineering Professor at University of Washington and IEEE Life Fellow",
+                  ? "أستاذ في الهندسة الكهربائية والحاسوبية بجامعة واشنطن، وزميل مدى الحياة في معهد مهندسي الكهرباء والإلكترونيات (IEEE). وهو خبير رائد في معالجة الإشارات الصوتية، حاصل على درجة الدكتوراه من جامعة ستانفورد، ورائد في تطوير مفاهيم أساسية في الشبكات العصبية التلافيفية."
+                  : " An Electrical and Computer Engineering Professor at the University of Washington and an IEEE Life Fellow. He is a leading expert in audio signal processing with a PhD from Stanford University and pioneered key concepts in convolutional neural networks.",
                 linkedin: "https://people.ece.uw.edu/atlas/",
                 image: withBasePath('/images/prof-les-atlas.png'),
               },
@@ -622,8 +619,8 @@ export default function NafasyAI() {
                 name: isArabic ? "تامر فهمي" : "Tamer Fahmy",
                 role: isArabic ? "مستشار اللوائح التنظيمية" : "MENA Regulatory Advisor",
                 description: isArabic
-                  ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية"
-                  : "Experienced advisor with over 20 years in healthcare industry at Philips and Dräger",
+                  ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية لدى شركتي فيليبس ودراغر. حاصل على ماجستير إدارة أعمال من كلية إس بي جاين للإدارة العالمية، وبكالوريوس في هندسة الطب الحيوي من جامعة القاهرة."
+                  : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University",
                 linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
                 image: withBasePath('/images/tamer-fahmy.png'),
               },
