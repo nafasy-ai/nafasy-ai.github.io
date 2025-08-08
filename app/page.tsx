@@ -324,7 +324,7 @@ export default function NafasyAI() {
       >
         <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
           <img
-            src={withBasePath('/images/dubai-heatmap.png')}
+            src={withBasePath('/public/images/dubai-heatmap.png')}
             alt={
               isArabic
                 ? "خريطة حرارية لانتشار الأمراض التنفسية في دبي"
