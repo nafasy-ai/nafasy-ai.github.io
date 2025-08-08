@@ -236,9 +236,13 @@ export default function NafasyAI() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white/80 backdrop-blur-sm">
+     <section className="py-16 bg-white/80 backdrop-blur-sm">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <div
+      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center text-center ${
+        isArabic ? "rtl" : "ltr"
+      }`}
+    >
       {[
         { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
         { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
@@ -252,7 +256,7 @@ export default function NafasyAI() {
         const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
 
         return (
-          <div key={index} className="text-center group">
+          <div key={index} className="group">
             <div className="flex flex-col items-center">
               <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
                 {displayNumber}
@@ -267,6 +271,7 @@ export default function NafasyAI() {
     </div>
   </div>
 </section>
+
 
 
 
