@@ -245,39 +245,41 @@ export default function NafasyAI() {
         </div>
       </section>
 
-      {/* Stats Section */}
+  {/* Stats Section */}
       <section className="py-16 bg-white/80 backdrop-blur-sm">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8"> 
-      {/* <h1 className="text-red-500 text-center z-10">{process.env.NEXT_PUBLIC_BASE_PATH}</h1> */}
-      {[
-        { number: "256,600+", label: isArabic ? "مريض تم اختبارهم" : "PCR-Tested Patients" },
-        { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
-        { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
-        { number: "3", label: isArabic ? "جامعات رائدة" : "Leading Universities" },
-      ].map((stat, index) => {
-        // Function to convert digits to Arabic numerals
-        const toArabicNumbers = (num) => {
-          const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
-          return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
-        };
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center text-center ${isArabic ? "rtl" : "ltr"
+              }`}
+          >
+            {[
+              { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
+              { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
+              { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
+            ].map((stat, index) => {
+              const toArabicNumbers = (num) => {
+                const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+                return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
+              };
 
-        const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
+              const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
 
-        return (
-          <div key={index} className="text-center group">
-            <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
-              {displayNumber}
-            </div>
-            <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
-              {stat.label}
-            </div>
+              return (
+                <div key={index} className="group">
+                  <div className="flex flex-col items-center">
+                    <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
+                      {displayNumber}
+                    </div>
+                    <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
+                      {stat.label}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
       {/* About Section */}
@@ -324,7 +326,7 @@ export default function NafasyAI() {
       >
         <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
           <img
-            src={withBasePath('/public/images/dubai-heatmap.png')}
+            src={withBasePath('@/public/images/dubai-heatmap.png')}
             alt={
               isArabic
                 ? "خريطة حرارية لانتشار الأمراض التنفسية في دبي"
@@ -780,6 +782,12 @@ export default function NafasyAI() {
               ? "كن جزءًا من الثورة في فحص الأمراض التنفسية بالذكاء الاصطناعي"
               : "Be part of the revolution in AI-powered respiratory disease screening"}
           </p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:bg-blue-100 transition duration-300 animate-in fade-in slide-in-from-bottom duration-1000 delay-300"
+          >
+            {isArabic ? "العودة إلى الأعلى" : "Back to Top"}
+          </button>
         </div>
       </section>
 
