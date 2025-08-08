@@ -504,99 +504,92 @@ export default function NafasyAI() {
 
 
 
-        {/* Use Cases Section */}
-      <section id="use-cases" className="py-20 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className={`text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000`}
-            dir={isArabic ? "rtl" : "ltr"}
-          >
-            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600">
-              {isArabic ? "حالات الاستخدام" : "Use Cases"}
-            </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
-              {isArabic
-                ? "تطبيقات متنوعة لتقنيتنا في مختلف القطاعات والبيئات."
-                : "Diverse applications of our technology across various sectors and environments."}
-            </p>
+      {/* Use Cases Section */}
+<section id="use-cases" className="py-20 bg-white/80 backdrop-blur-sm">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
+      <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600">
+        {isArabic ? "حالات الاستخدام" : "Use Cases"}
+      </h3>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto text-justify">
+        {isArabic
+          ? "تطبيقات متنوعة لتقنيتنا في مختلف القطاعات والبيئات."
+          : "Diverse applications of our technology across various sectors and environments"}
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {[
+        {
+          title: isArabic ? "التجمعات العامة الكثيفة" : "High-Density Public Gatherings",
+          description: isArabic
+            ? "فحص سريع لملايين الحجاج في مناسبات مثل الحج والعمرة للكشف عن الإنفلونزا وRSV وكوفيد-19 قبل حدوث تفشي المرض."
+            : "Rapidly screen millions of pilgrims at events like Hajj and Umrah to detect flu, RSV, and COVID-19 before outbreaks can occur",
+          image: withBasePath('/images/G1.png'),
+        },
+        {
+          title: isArabic ? "المطارات ونقاط الحدود" : "Airports & Border Control",
+          description: isArabic
+            ? "تنفيذ فحوصات مستهدفة للمسافرين من المناطق عالية الخطورة لتقليل استيراد الأمراض المعدية."
+            : "Implement targeted screening of passengers from high-risk regions to reduce the importation of infectious diseases",
+          image: withBasePath('/images/A1.png'),
+        },
+        {
+          title: isArabic ? "المؤسسات التعليمية" : "Educational Institutions",
+          description: isArabic
+            ? "تسهيل الفحص المنتظم في المدارس ورياض الأطفال للكشف عن العدوى قبل انتشارها على نطاق واسع بين الأطفال وعائلاتهم."
+            : "Facilitate regular screening in schools and early childhood settings to detect infections before they spread widely among children and their families",
+          image: withBasePath('/images/ED1.png'),
+        },
+        {
+          title: isArabic ? "الرعاية الصحية والتأمين" : "Healthcare & Insurance",
+          description: isArabic
+            ? "الدمج في سير العمل بالمستشفيات والعيادات لفحص المرضى الذين يعانون من أعراض تنفسية قبل الانتقال إلى اختبارات أكثر تكلفة، مما يحسن الكفاءة من حيث التكلفة."
+            : "Integrate into hospital and clinic workflows to prescreen patients with respiratory symptoms before escalating to more expensive tests, improving cost-efficiency",
+          image: withBasePath('/images/hospital-waiting-room.png'),
+        },
+        {
+          title: isArabic ? "الطب عن بُعد والرعاية الصحية النائية" : "Telemedicine & Remote Healthcare",
+          description: isArabic
+            ? "تعزيز الاستشارات الافتراضية من خلال تمكين الكشف المبكر عن التهابات الجهاز التنفسي، مما يسمح لأولئك في المناطق النائية بالوصول إلى الرعاية الصحية الحرجة."
+            : "Enhance virtual consultations by enabling early detection of respiratory infections, allowing those in remote areas to access critical healthcare",
+          image: withBasePath('/images/TM1.png'),
+        },
+        {
+          title: isArabic ? "الشركات والمكاتب" : "Corporate & Offices",
+          description: isArabic
+            ? "فحص الموظفين للحفاظ على بيئة عمل آمنة وتقليل انتشار الأمراض التنفسية في مكان العمل."
+            : "Employee screening for safe workplace environments and reducing the spread of respiratory diseases in the workplace",
+          image: withBasePath('/images/CO1.png'),
+        },
+      ].map((useCase, index) => (
+        <Card
+          key={index}
+          className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom"
+          style={{ animationDelay: `${index * 100}ms` }}
+        >
+          <div className="aspect-video overflow-hidden rounded-t-lg">
+            <img
+              src={useCase.image || "/placeholder.svg"}
+              alt={useCase.title}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" dir={isArabic ? "rtl" : "ltr"}>
-            {[
-              {
-                title: isArabic ? "التجمعات العامة الكثيفة" : "High-Density Public Gatherings",
-                description: isArabic
-                  ? "فحص سريع لملايين الحجاج في مناسبات مثل الحج والعمرة للكشف عن الإنفلونزا وRSV وكوفيد-19 قبل حدوث تفشي المرض."
-                  : "Rapidly screen millions of pilgrims at events like Hajj and Umrah to detect flu, RSV, and COVID-19 before outbreaks can occur.",
-                image: withBasePath('/images/G1.png'),
-              },
-              {
-                title: isArabic ? "المطارات ونقاط الحدود" : "Airports & Border Control",
-                description: isArabic
-                  ? "تنفيذ فحوصات مستهدفة للمسافرين من المناطق عالية الخطورة لتقليل استيراد الأمراض المعدية."
-                  : "Implement targeted screening of passengers from high-risk regions to reduce the importation of infectious diseases.",
-                image: withBasePath('/images/A1.png'),
-              },
-              {
-                title: isArabic ? "المؤسسات التعليمية" : "Educational Institutions",
-                description: isArabic
-                  ? "تسهيل الفحص المنتظم في المدارس ورياض الأطفال للكشف عن العدوى قبل انتشارها على نطاق واسع بين الأطفال وعائلاتهم."
-                  : "Facilitate regular screening in schools and early childhood settings to detect infections before they spread widely among children and their families.",
-                image: withBasePath('/images/ED1.png'),
-              },
-              {
-                title: isArabic ? "الرعاية الصحية والتأمين" : "Healthcare & Insurance",
-                description: isArabic
-                  ? "الدمج في سير العمل بالمستشفيات والعيادات لفحص المرضى الذين يعانون من أعراض تنفسية قبل الانتقال إلى اختبارات أكثر تكلفة، مما يحسن الكفاءة من حيث التكلفة."
-                  : "Integrate into hospital and clinic workflows to prescreen patients with respiratory symptoms before escalating to more expensive tests, improving cost-efficiency.",
-                image: withBasePath('/images/hospital-waiting-room.png'),
-              },
-              {
-                title: isArabic ? "الطب عن بُعد والرعاية الصحية النائية" : "Telemedicine & Remote Healthcare",
-                description: isArabic
-                  ? "تعزيز الاستشارات الافتراضية من خلال تمكين الكشف المبكر عن التهابات الجهاز التنفسي، مما يسمح لأولئك في المناطق النائية بالوصول إلى الرعاية الصحية الحرجة."
-                  : "Enhance virtual consultations by enabling early detection of respiratory infections, allowing those in remote areas to access critical healthcare.",
-                image: withBasePath('/images/TM1.png'),
-              },
-              {
-                title: isArabic ? "الشركات والمكاتب" : "Corporate & Offices",
-                description: isArabic
-                  ? "فحص الموظفين للحفاظ على بيئة عمل آمنة وتقليل انتشار الأمراض التنفسية في مكان العمل."
-                  : "Employee screening for safe workplace environments and reducing the spread of respiratory diseases in the workplace.",
-                image: withBasePath('/images/CO1.png'),
-              },
-            ].map((useCase, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="aspect-video overflow-hidden rounded-t-lg">
-                  <img
-                    src={useCase.image || "/placeholder.svg"}
-                    alt={useCase.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-lg transition-colors duration-300 group-hover:text-blue-600">
-                    {useCase.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-gray-600 leading-relaxed text-sm text-justify">
-                    {useCase.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-
-
+          <CardHeader>
+            <CardTitle className="text-lg transition-colors duration-300 group-hover:text-blue-600">
+              {useCase.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-gray-600 leading-relaxed text-sm text-justify">
+              {useCase.description}
+            </CardDescription>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Leadership Section */}
       <section id="leadership" className="py-20 relative">
@@ -640,10 +633,10 @@ export default function NafasyAI() {
                 role: isArabic ? "مستشار اللوائح التنظيمية" : "MENA Regulatory Advisor",
                 description: isArabic
                   ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية لدى شركتي فيليبس ودراغر. حاصل على ماجستير إدارة أعمال من كلية إس بي جاين للإدارة العالمية، وبكالوريوس في هندسة الطب الحيوي من جامعة القاهرة."
-                  : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University.",
+                  : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University",
                 linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
                 image: withBasePath('/images/tamer-fahmy.png'),
-            },
+              },
             ].map((leader, index) => (
               <Card
                 key={index}
@@ -673,16 +666,13 @@ export default function NafasyAI() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 leading-relaxed text-justify">
-                    {leader.description}
-                  </p>
+                  <p className="text-gray-600 leading-relaxed">{leader.description}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
-
 
       {/* News Section */}
       <section id="news" className="py-20 bg-white/80 backdrop-blur-sm">
