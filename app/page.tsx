@@ -236,41 +236,40 @@ export default function NafasyAI() {
       </section>
 
       {/* Stats Section */}
-     <section className="py-16 bg-white/80 backdrop-blur-sm">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div
-      className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center text-center ${
-        isArabic ? "rtl" : "ltr"
-      }`}
-    >
-      {[
-        { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
-        { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
-        { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
-      ].map((stat, index) => {
-        const toArabicNumbers = (num) => {
-          const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
-          return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
-        };
+      <section className="py-16 bg-white/80 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center text-center ${isArabic ? "rtl" : "ltr"
+              }`}
+          >
+            {[
+              { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
+              { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
+              { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
+            ].map((stat, index) => {
+              const toArabicNumbers = (num) => {
+                const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+                return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
+              };
 
-        const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
+              const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
 
-        return (
-          <div key={index} className="group">
-            <div className="flex flex-col items-center">
-              <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
-                {displayNumber}
-              </div>
-              <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
-                {stat.label}
-              </div>
-            </div>
+              return (
+                <div key={index} className="group">
+                  <div className="flex flex-col items-center">
+                    <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
+                      {displayNumber}
+                    </div>
+                    <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
+                      {stat.label}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
-        );
-      })}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
 
 
@@ -281,8 +280,7 @@ export default function NafasyAI() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Text Section */}
             <div
-              className={`${isArabic ? "order-1 lg:order-2 text-right" : "order-1 lg:order-1 text-left"}
-          animate-in fade-in slide-in-from-left duration-1000`}
+              className={`${isArabic ? "order-1 lg:order-2 text-right" : "order-1 lg:order-1 text-left"} animate-in fade-in slide-in-from-left duration-1000`}
             >
               <h3
                 className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : ""}`}
@@ -290,7 +288,7 @@ export default function NafasyAI() {
                 {isArabic ? "من نحن" : "About Us"}
               </h3>
               <p
-                className={`text-lg text-gray-600 mb-6 leading-relaxed ${isArabic ? "text-right" : ""}`}
+                className={`text-lg text-gray-600 mb-6 leading-relaxed text-justify ${isArabic ? "text-right" : "text-left"}`}
               >
                 {isArabic
                   ? "نحن رواد في إحداث تحول عالمي في فحوصات الصحة. من خلال تسخير قوة الذكاء الاصطناعي وبساطة الهاتف الذكي، نقدم كشفًا فوريًا ومنخفض التكلفة وغير جراحي للحالات التنفسية. مهمتنا هي تمكين المرضى والأطباء والحكومات من خلال تكنولوجيا متقدمة وسهلة الوصول، لجعل الرعاية الصحية الاستباقية حقيقة للجميع."
@@ -305,17 +303,15 @@ export default function NafasyAI() {
                   }`}
               >
               </div>
-
             </div>
 
             {/* Image Section */}
             <div
-              className={`${isArabic ? "order-1 lg:order-2" : "order-2 lg:order-2"}
-          relative animate-in fade-in slide-in-from-right duration-1000`}
+              className={`${isArabic ? "order-1 lg:order-2" : "order-2 lg:order-2"} relative animate-in fade-in slide-in-from-right duration-1000`}
             >
               <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
                 <img
-                  src={withBasePath('/images/dubai-heatmap.png')}
+                  src="/images/dubai-heatmap.png"
                   alt={
                     isArabic
                       ? "خريطة حرارية لانتشار الأمراض التنفسية في دبي"
@@ -328,6 +324,8 @@ export default function NafasyAI() {
           </div>
         </div>
       </section>
+
+
       {/* Technology Section */}
       <section id="technology" className="py-20 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -420,13 +418,18 @@ export default function NafasyAI() {
       <section id="vision" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className={`${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-left duration-1000`}>
+
+            <div
+              className={`${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-left duration-1000`}
+              dir={isArabic ? "rtl" : "ltr"}
+            >
               <h3
-                className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : "text-left"}`}
+                className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600"
               >
                 {isArabic ? "رؤيتنا" : "Our Vision"}
               </h3>
-              <p className={`text-lg text-gray-600 mb-8 leading-relaxed ${isArabic ? "text-right" : "text-left"}`}>
+
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed text-justify">
                 {isArabic
                   ? "نتطلع إلى مستقبل تكون فيه الرعاية الصحية استباقية ووقائية. يهدف هذا المشروع إلى تطوير تطبيق هاتف ذكي للفحص السريع وبتكلفة منخفضة للأمراض التنفسية المعدية."
                   : "We envision a future where healthcare is both proactive and preventative. This project aims to develop a smartphone app for rapid, cost-effective prescreening of infectious respiratory diseases."}
@@ -466,25 +469,26 @@ export default function NafasyAI() {
                     >
                       {item.step}
                     </div>
-                    <div className={isArabic ? "text-right" : "text-left"}>
+                    <div className="text-justify">
                       <h4
-                        className={`font-semibold text-gray-900 mb-1 transition-colors duration-300 group-hover:text-blue-600 ${isArabic ? "text-right" : "text-left"
-                          }`}
+                        className="font-semibold text-gray-900 mb-1 transition-colors duration-300 group-hover:text-blue-600"
                       >
                         {item.title}
                       </h4>
-                      <p className={`text-gray-600 ${isArabic ? "text-right" : "text-left"}`}>{item.desc}</p>
+                      <p className="text-gray-600">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
+
+            {/* Image Section */}
             <div
               className={`relative ${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-right duration-1000`}
             >
               <div className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
                 <img
-                  src={withBasePath('/images/ai-respiratory-screening-process.png')}
+                  src="/images/ai-respiratory-screening-process.png"
                   alt={
                     isArabic
                       ? "مخطط عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
@@ -497,6 +501,7 @@ export default function NafasyAI() {
           </div>
         </div>
       </section>
+
 
 
       {/* Use Cases Section */}
@@ -589,25 +594,28 @@ export default function NafasyAI() {
       {/* Leadership Section */}
       <section id="leadership" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
+          <div
+            className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000"
+            dir={isArabic ? "rtl" : "ltr"}
+          >
             <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600">
               {isArabic ? "القيادة" : "Leadership"}
             </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center">
               {isArabic
                 ? "فريق من الخبراء والقادة في مجال الذكاء الاصطناعي والرعاية الصحية"
                 : "Expert team of leaders in AI and healthcare innovation"}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8" dir={isArabic ? "rtl" : "ltr"}>
             {[
               {
                 name: isArabic ? "أميل خانزادا" : "Amil Khanzada",
                 role: isArabic ? "المؤسس والرئيس التنفيذي" : "Founder & CEO",
                 description: isArabic
-                  ? "    خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة. "
-                  : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management—including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
+                  ? "خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة."
+                  : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
                 linkedin: "https://www.linkedin.com/in/amilkhanzada",
                 image: withBasePath('/images/amil-khanzada.png'),
               },
@@ -616,7 +624,7 @@ export default function NafasyAI() {
                 role: isArabic ? "الشريك المؤسس والمدير التقني" : "Co-Founder & CTO",
                 description: isArabic
                   ? "أستاذ في الهندسة الكهربائية والحاسوبية بجامعة واشنطن، وزميل مدى الحياة في معهد مهندسي الكهرباء والإلكترونيات (IEEE). وهو خبير رائد في معالجة الإشارات الصوتية، حاصل على درجة الدكتوراه من جامعة ستانفورد، ورائد في تطوير مفاهيم أساسية في الشبكات العصبية التلافيفية."
-                  : " An Electrical and Computer Engineering Professor at the University of Washington and an IEEE Life Fellow. He is a leading expert in audio signal processing with a PhD from Stanford University and pioneered key concepts in convolutional neural networks.",
+                  : "An Electrical and Computer Engineering Professor at the University of Washington and an IEEE Life Fellow. He is a leading expert in audio signal processing with a PhD from Stanford University and pioneered key concepts in convolutional neural networks.",
                 linkedin: "https://people.ece.uw.edu/atlas/",
                 image: withBasePath('/images/prof-les-atlas.png'),
               },
@@ -625,10 +633,10 @@ export default function NafasyAI() {
                 role: isArabic ? "مستشار اللوائح التنظيمية" : "MENA Regulatory Advisor",
                 description: isArabic
                   ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية لدى شركتي فيليبس ودراغر. حاصل على ماجستير إدارة أعمال من كلية إس بي جاين للإدارة العالمية، وبكالوريوس في هندسة الطب الحيوي من جامعة القاهرة."
-                  : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University",
+                  : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University.",
                 linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
                 image: withBasePath('/images/tamer-fahmy.png'),
-              },
+            },
             ].map((leader, index) => (
               <Card
                 key={index}
@@ -658,13 +666,16 @@ export default function NafasyAI() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600 leading-relaxed">{leader.description}</p>
+                  <p className="text-gray-600 leading-relaxed text-justify">
+                    {leader.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* News Section */}
       <section id="news" className="py-20 bg-white/80 backdrop-blur-sm">
@@ -741,6 +752,7 @@ export default function NafasyAI() {
           </Card>
         </div>
       </section>
+
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 relative overflow-hidden">
         <div className="absolute inset-0">
@@ -760,6 +772,12 @@ export default function NafasyAI() {
               ? "كن جزءًا من الثورة في فحص الأمراض التنفسية بالذكاء الاصطناعي"
               : "Be part of the revolution in AI-powered respiratory disease screening"}
           </p>
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="mt-6 px-6 py-3 bg-white text-blue-600 font-semibold rounded-full shadow-lg hover:bg-blue-100 transition duration-300 animate-in fade-in slide-in-from-bottom duration-1000 delay-300"
+          >
+            {isArabic ? "العودة إلى الأعلى" : "Back to Top"}
+          </button>
         </div>
       </section>
 
