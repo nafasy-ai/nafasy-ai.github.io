@@ -426,91 +426,96 @@ export default function NafasyAI() {
 
 
 
-      {/* Vision Section */}
-      <section id="vision" className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className={`${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-left duration-1000`}>
-              <h3
-                className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : "text-left"}`}
-              >
-                {isArabic ? "رؤيتنا" : "Our Vision"}
-              </h3>
-              <p className={`text-lg text-gray-600 mb-8 leading-relaxed ${isArabic ? "text-right" : "text-left"}`}>
-                {isArabic
-                  ? "نتطلع إلى مستقبل تكون فيه الرعاية الصحية استباقية ووقائية. يهدف هذا المشروع إلى تطوير تطبيق هاتف ذكي للفحص السريع وبتكلفة منخفضة للأمراض التنفسية المعدية."
-                  : "We envision a future where healthcare is both proactive and preventative. This project aims to develop a smartphone app for rapid, cost-effective prescreening of infectious respiratory diseases."}
-              </p>
+   {/* Vision Section */}
+<section id="vision" className="py-20 relative">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className={`${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-left duration-1000`}>
+        <h3
+          className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : "text-left"}`}
+        >
+          {isArabic ? "رؤيتنا" : "Our Vision"}
+        </h3>
+        <p
+          className={`text-lg text-gray-600 mb-8 leading-relaxed text-justify ${
+            isArabic ? "text-right" : "text-left"
+          }`}
+        >
+          {isArabic
+            ? "نتطلع إلى مستقبل تكون فيه الرعاية الصحية استباقية ووقائية. يهدف هذا المشروع إلى تطوير تطبيق هاتف ذكي للفحص السريع وبتكلفة منخفضة للأمراض التنفسية المعدية."
+            : "We envision a future where healthcare is both proactive and preventative. This project aims to develop a smartphone app for rapid, cost-effective prescreening of infectious respiratory diseases."}
+        </p>
 
-              <div className="space-y-4">
-                {[
-                  {
-                    step: isArabic ? "١" : "1",
-                    title: isArabic ? "جمع البيانات" : "Data Collection",
-                    desc: isArabic ? "السعال في تطبيق الهاتف الذكي" : "Cough into Smartphone App",
-                  },
-                  {
-                    step: isArabic ? "٢" : "2",
-                    title: isArabic ? "تحليل الذكاء الاصطناعي" : "AI Analysis",
-                    desc: isArabic ? "الذكاء الاصطناعي يكتشف أنماط أصوات الأمراض" : "AI Detects Disease Sound Patterns",
-                  },
-                  {
-                    step: isArabic ? "٣" : "3",
-                    title: isArabic ? "حالات الاستخدام" : "Applications",
-                    desc: isArabic
-                      ? "فحص العدوى التنفسية والربو والتدخين"
-                      : "Respiratory Screening, Asthma, Smoking Detection",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-start group animate-in fade-in slide-in-from-left ${
-                      isArabic 
-                        ? "justify-start space-x-reverse space-x-3"
-                        : "flex-row text-left space-x-4"
-                    }`}
-                    style={{ animationDelay: `${index * 200}ms` }}
-                  >
-                    <div
-                      className={`flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-600 ${
-                        isArabic ? "mr-4" : "ml-0"
-                      }`}
-                    >
-                      {item.step}
-                    </div>
-                    <div className={isArabic ? "text-right" : "text-left"}>
-                      <h4
-                        className={`font-semibold text-gray-900 mb-1 transition-colors duration-300 group-hover:text-blue-600 ${
-                          isArabic ? "text-right" : "text-left"
-                        }`}
-                      >
-                        {item.title}
-                      </h4>
-                      <p className={`text-gray-600 ${isArabic ? "text-right" : "text-left"}`}>{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+        <div className="space-y-4">
+          {[
+            {
+              step: isArabic ? "١" : "1",
+              title: isArabic ? "جمع البيانات" : "Data Collection",
+              desc: isArabic ? "السعال في تطبيق الهاتف الذكي" : "Cough into Smartphone App",
+            },
+            {
+              step: isArabic ? "٢" : "2",
+              title: isArabic ? "تحليل الذكاء الاصطناعي" : "AI Analysis",
+              desc: isArabic ? "الذكاء الاصطناعي يكتشف أنماط أصوات الأمراض" : "AI Detects Disease Sound Patterns",
+            },
+            {
+              step: isArabic ? "٣" : "3",
+              title: isArabic ? "حالات الاستخدام" : "Applications",
+              desc: isArabic
+                ? "فحص العدوى التنفسية والربو والتدخين"
+                : "Respiratory Screening, Asthma, Smoking Detection",
+            },
+          ].map((item, index) => (
             <div
-              className={`relative ${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-right duration-1000`}
+              key={index}
+              className={`flex items-start group animate-in fade-in slide-in-from-left ${
+                isArabic
+                  ? "justify-start space-x-reverse space-x-3"
+                  : "flex-row text-left space-x-4"
+              }`}
+              style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
-                <img
-                  src={withBasePath('/images/ai-respiratory-screening-process.png')}
-                  alt={
-                    isArabic
-                      ? "مخطط عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
-                      : "AI respiratory screening process diagram"
-                  }
-                  className="w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-[1.02]"
-                />
+              <div
+                className={`flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-cyan-600 ${
+                  isArabic ? "mr-4" : "ml-0"
+                }`}
+              >
+                {item.step}
+              </div>
+              <div className={isArabic ? "text-right" : "text-left"}>
+                <h4
+                  className={`font-semibold text-gray-900 mb-1 transition-colors duration-300 group-hover:text-blue-600 ${
+                    isArabic ? "text-right" : "text-left"
+                  }`}
+                >
+                  {item.title}
+                </h4>
+                <p className={`text-gray-600 text-justify ${isArabic ? "text-right" : "text-left"}`}>
+                  {item.desc}
+                </p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
-      </section>
-
+      </div>
+      <div
+        className={`relative ${isArabic ? "order-1" : "order-2"} animate-in fade-in slide-in-from-right duration-1000`}
+      >
+        <div className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
+          <img
+            src={withBasePath('/images/ai-respiratory-screening-process.png')}
+            alt={
+              isArabic
+                ? "مخطط عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
+                : "AI respiratory screening process diagram"
+            }
+            className="w-full h-auto rounded-lg shadow-lg transition-transform duration-500 hover:scale-[1.02]"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Use Cases Section */}
       <section id="use-cases" className="py-20 bg-white/80 backdrop-blur-sm">
@@ -744,7 +749,7 @@ export default function NafasyAI() {
                  </p>
                 </div>
                 <div className={`grid grid-cols-2 gap-4 ${isArabic ? "order-1" : "order-2"}`}>
-                  {["MBRU", "UW", "Dubai Health", "P4H"].map((partner, index) => (
+                  {["MBRU", "University of Washington", "Dubai Health", "Dubai Future Foundation"].map((partner, index) => (
                     <div
                       key={partner}
                       className="bg-gray-50 rounded-lg p-4 text-center transition-all duration-300 hover:scale-105 hover:bg-blue-50 hover:shadow-md animate-in fade-in slide-in-from-bottom"
