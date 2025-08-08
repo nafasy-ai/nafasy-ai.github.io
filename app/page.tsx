@@ -354,7 +354,7 @@ export default function NafasyAI() {
       {[
         {
           icon: <Globe className="h-8 w-8 text-blue-600" />,
-          image: require("@/public/images/H1.jpg"),
+          image: require("@/public/images/G1.png"),
           imageAlt: isArabic ? "طفل مريض" : "Sick child",
           title: isArabic ? "مجموعة بيانات ضخمة" : "Massive Dataset",
           description: isArabic
