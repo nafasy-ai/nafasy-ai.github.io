@@ -237,36 +237,36 @@ export default function NafasyAI() {
 
       {/* Stats Section */}
       <section className="py-16 bg-white/80 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
-              { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
-              { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
-            ].map((stat, index) => {
-              const toArabicNumbers = (num) => {
-                const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
-                return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
-              };
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {[
+        { number: "256,600+", label: isArabic ? "مجموعة بيانات المرضى" : "Patient Dataset" },
+        { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
+        { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
+      ].map((stat, index) => {
+        const toArabicNumbers = (num) => {
+          const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
+          return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
+        };
 
-              const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
+        const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
 
-              return (
-                <div key={index} className="text-center group">
-                  <div className="flex flex-col items-center">
-                    <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
-                      {displayNumber}
-                    </div>
-                    <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
-                      {stat.label}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+        return (
+          <div key={index} className="text-center group">
+            <div className="flex flex-col items-center">
+              <div className="text-3xl lg:text-4xl font-bold text-blue-600 mb-2 transition-all duration-300 group-hover:scale-110 group-hover:text-cyan-600">
+                {displayNumber}
+              </div>
+              <div className="text-gray-600 font-medium transition-colors duration-300 group-hover:text-gray-800">
+                {stat.label}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
 
 
