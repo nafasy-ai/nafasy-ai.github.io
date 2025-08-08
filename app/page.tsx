@@ -525,42 +525,42 @@ export default function NafasyAI() {
                 description: isArabic
                   ? "فحص سريع لملايين الحجاج في مناسبات مثل الحج والعمرة للكشف عن الإنفلونزا وRSV وكوفيد-19 قبل حدوث تفشي المرض."
                   : "Rapidly screen millions of pilgrims at events like Hajj and Umrah to detect flu, RSV, and COVID-19 before outbreaks can occur",
-                image: withBasePath('/images/H1.jpg'),
+                image: withBasePath('/images/G1.png'),
               },
               {
                 title: isArabic ? "المطارات ونقاط الحدود" : "Airports & Border Control",
                 description: isArabic
                   ? "تنفيذ فحوصات مستهدفة للمسافرين من المناطق عالية الخطورة لتقليل استيراد الأمراض المعدية."
-                  : "Implement targeted screening of passengers from high-risk regions to reduce the importation of infectious diseases",
-                image: withBasePath('/images/A1.jpg'),
+                  : "Implement targeted screening of passengers from high-risk regions to reduce the importation of infectious diseases.",
+                image: withBasePath('/images/A1.png'),
               },
               {
                 title: isArabic ? "المؤسسات التعليمية" : "Educational Institutions",
                 description: isArabic
                   ? "تسهيل الفحص المنتظم في المدارس ورياض الأطفال للكشف عن العدوى قبل انتشارها على نطاق واسع بين الأطفال وعائلاتهم."
-                  : "Facilitate regular screening in schools and early childhood settings to detect infections before they spread widely among children and their families",
-                image: withBasePath('/images/E1.jpg'),
+                  : "Facilitate regular screening in schools and early childhood settings to detect infections before they spread widely among children and their families.",
+                image: withBasePath('/images/ED1.png'),
               },
               {
                 title: isArabic ? "الرعاية الصحية والتأمين" : "Healthcare & Insurance",
                 description: isArabic
                   ? "الدمج في سير العمل بالمستشفيات والعيادات لفحص المرضى الذين يعانون من أعراض تنفسية قبل الانتقال إلى اختبارات أكثر تكلفة، مما يحسن الكفاءة من حيث التكلفة."
-                  : "Integrate into hospital and clinic workflows to prescreen patients with respiratory symptoms before escalating to more expensive tests, improving cost-efficiency",
+                  : "Integrate into hospital and clinic workflows to prescreen patients with respiratory symptoms before escalating to more expensive tests, improving cost-efficiency.",
                 image: withBasePath('/images/hospital-waiting-room.png'),
               },
               {
                 title: isArabic ? "الطب عن بُعد والرعاية الصحية النائية" : "Telemedicine & Remote Healthcare",
                 description: isArabic
                   ? "تعزيز الاستشارات الافتراضية من خلال تمكين الكشف المبكر عن التهابات الجهاز التنفسي، مما يسمح لأولئك في المناطق النائية بالوصول إلى الرعاية الصحية الحرجة."
-                  : "Enhance virtual consultations by enabling early detection of respiratory infections, allowing those in remote areas to access critical healthcare",
-                image: withBasePath('/images/TM1.jpg'),
+                  : "Enhance virtual consultations by enabling early detection of respiratory infections, allowing those in remote areas to access critical healthcare.",
+                image: withBasePath('/images/TM1.png'),
               },
               {
                 title: isArabic ? "الشركات والمكاتب" : "Corporate & Offices",
                 description: isArabic
                   ? "فحص الموظفين للحفاظ على بيئة عمل آمنة وتقليل انتشار الأمراض التنفسية في مكان العمل."
-                  : "Employee screening for safe workplace environments and reducing the spread of respiratory diseases in the workplace",
-                image: withBasePath('/images/O1.jpg'),
+                  : "Employee screening for safe workplace environments and reducing the spread of respiratory diseases in the workplace.",
+                image: withBasePath('/images/CO1.png'),
               },
             ].map((useCase, index) => (
               <Card
@@ -590,6 +590,12 @@ export default function NafasyAI() {
           </div>
         </div>
       </section>
+
+
+
+
+
+
 
       {/* Leadership Section */}
       <section id="leadership" className="py-20 relative">
@@ -636,7 +642,7 @@ export default function NafasyAI() {
                   : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University.",
                 linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
                 image: withBasePath('/images/tamer-fahmy.png'),
-            },
+              },
             ].map((leader, index) => (
               <Card
                 key={index}
