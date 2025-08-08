@@ -594,28 +594,25 @@ export default function NafasyAI() {
       {/* Leadership Section */}
       <section id="leadership" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div
-            className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000"
-            dir={isArabic ? "rtl" : "ltr"}
-          >
+          <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
             <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600">
               {isArabic ? "القيادة" : "Leadership"}
             </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto text-center">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {isArabic
                 ? "فريق من الخبراء والقادة في مجال الذكاء الاصطناعي والرعاية الصحية"
                 : "Expert team of leaders in AI and healthcare innovation"}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8" dir={isArabic ? "rtl" : "ltr"}>
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 name: isArabic ? "أميل خانزادا" : "Amil Khanzada",
                 role: isArabic ? "المؤسس والرئيس التنفيذي" : "Founder & CEO",
                 description: isArabic
-                  ? "خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة."
-                  : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
+                  ? "    خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة. "
+                  : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management—including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
                 linkedin: "https://www.linkedin.com/in/amilkhanzada",
                 image: withBasePath('/images/amil-khanzada.png'),
               },
@@ -749,7 +746,6 @@ export default function NafasyAI() {
           </Card>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-cyan-600 relative overflow-hidden">
         <div className="absolute inset-0">
