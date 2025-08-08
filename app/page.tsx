@@ -528,7 +528,7 @@ export default function NafasyAI() {
       <p className={`text-lg text-gray-600 max-w-3xl mx-auto ${isArabic ? "text-right" : "text-center"}`}>
         {isArabic
           ? "تطبيقات متنوعة لتقنيتنا في مختلف القطاعات والبيئات."
-          : "Diverse applications of our technology across various sectors and environments"}
+          : "Diverse applications of our technology across various sectors and environments."}
       </p>
     </div>
 
