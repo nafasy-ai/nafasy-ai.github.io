@@ -186,11 +186,6 @@ export default function NafasyAI() {
       <section className="py-20 lg:py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100/80 backdrop-blur-sm text-blue-800 rounded-full text-sm font-medium mb-6 transition-all duration-300 hover:scale-105 hover:bg-blue-200/80">
-              <Award className={`w-4 h-4 animate-pulse ${isArabic ? "ml-2" : "mr-2"}`} />
-
-              {isArabic ? "تقنية حاصلة على براءة اختراع" : "Patented AI Technology"}
-            </div>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight animate-in fade-in slide-in-from-bottom duration-1000 delay-200">
               {isArabic ? (
                 <>
@@ -282,42 +277,39 @@ export default function NafasyAI() {
       </section>
 
 
-      {/* About Section */}
-<section id="about" className="py-20 relative">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div className="grid lg:grid-cols-2 gap-12 items-center">
-      {/* Text Section */}
-      <div
-        className={`${isArabic ? "order-1 lg:order-2 text-right" : "order-1 lg:order-1 text-left"}
-          animate-in fade-in slide-in-from-left duration-1000`}
-      >
-        <h3
-          className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600 ${isArabic ? "text-right" : ""}`}
-        >
-          {isArabic ? "من نحن" : "About Us"}
-        </h3>
-        <p
-          className={`text-lg text-gray-600 mb-6 leading-relaxed ${isArabic ? "text-right" : ""}`}
-        >
-          {isArabic
-            ? "نحن رواد في إحداث تحول عالمي في فحوصات الصحة. من خلال تسخير قوة الذكاء الاصطناعي وبساطة الهاتف الذكي، نقدم كشفًا فوريًا ومنخفض التكلفة وغير جراحي للحالات التنفسية. مهمتنا هي تمكين المرضى والأطباء والحكومات من خلال تكنولوجيا متقدمة وسهلة الوصول، لجعل الرعاية الصحية الاستباقية حقيقة للجميع."
-            : "We are pioneering a global transformation in health screening. By harnessing the power of artificial intelligence and the simplicity of a smartphone, we deliver real-time, low-cost, and non-invasive detection of respiratory conditions. Our mission is to empower patients, clinicians, and governments with superior, accessible technology, making proactive healthcare a reality for all."}
-        </p>
+   {/* About Section */}
+      <section id="about" className="py-20 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-        {/* CheckCircle with Text */}
-        <div
-          className={`flex items-center group ${
-            isArabic
-              ? "justify-start space-x-reverse space-x-3"
-              : "flex-row space-x-3"
-          }`}
-        >
-          <CheckCircle className="h-6 w-6 text-green-500 transition-transform duration-300 group-hover:scale-110" />
-          <span className="text-gray-700 font-medium transition-colors duration-300 group-hover:text-green-600">
-            {isArabic ? "تقنية حاصلة على براءة اختراع" : "Patented Technology"}
-          </span>
-        </div>
-      </div>
+            {/* Text Section */}
+            <div
+              className={`${isArabic ? "order-1 lg:order-2" : "order-1 lg:order-1 text-left"} animate-in fade-in slide-in-from-left duration-1000`}
+              dir={isArabic ? "rtl" : "ltr"}
+            >
+              <h3
+                className={`text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600`}
+              >
+                {isArabic ? "من نحن" : "About Us"}
+              </h3>
+
+              <p
+                className="text-lg text-gray-600 mb-6 leading-relaxed text-justify"
+              >
+                {isArabic
+                  ? "نحن رواد في إحداث تحول عالمي في فحوصات الصحة. من خلال تسخير قوة الذكاء الاصطناعي وبساطة الهاتف الذكي، نقدم كشفًا فوريًا ومنخفض التكلفة وغير جراحي للحالات التنفسية. مهمتنا هي تمكين المرضى والأطباء والحكومات من خلال تكنولوجيا متقدمة وسهلة الوصول، لجعل الرعاية الصحية الاستباقية حقيقة للجميع."
+                  : "We are pioneering a global transformation in health screening. By harnessing the power of artificial intelligence and the simplicity of a smartphone, we deliver real-time, low-cost, and non-invasive detection of respiratory conditions. Our mission is to empower patients, clinicians, and governments with superior, accessible technology, making proactive healthcare a reality for all."}
+              </p>
+
+              {/* CheckCircle with Text */}
+              <div
+                className={`flex items-center group ${isArabic
+                  ? "justify-start space-x-reverse space-x-3"
+                  : "flex-row space-x-3"
+                  }`}
+              >
+              </div>
+            </div>
 
       {/* Image Section */}
       <div
