@@ -599,85 +599,90 @@ export default function NafasyAI() {
         </div>
       </section>
 
-      {/* Leadership Section */}
-      <section id="leadership" className="py-20 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
-            <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600">
-              {isArabic ? "القيادة" : "Leadership"}
-            </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              {isArabic
-                ? "فريق من الخبراء والقادة في مجال الذكاء الاصطناعي والرعاية الصحية"
-                : "Expert team of leaders in AI and healthcare innovation"}
-            </p>
-          </div>
+     
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: isArabic ? "أميل خانزادا" : "Amil Khanzada",
-                role: isArabic ? "المؤسس والرئيس التنفيذي" : "Founder & CEO",
-                description: isArabic
-                        ? "خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة."
-                  : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
-                linkedin: "https://www.linkedin.com/in/amilkhanzada",
-                image: withBasePath('/images/amil-khanzada.png'),
-              },
-              {
-                name: isArabic ? "البروفيسور ليس أطلس" : "Prof. Les Atlas",
-                role: isArabic ? "الشريك المؤسس والمدير التقني" : "Co-Founder & CTO",
-                description: isArabic
-                 ? "أستاذ في الهندسة الكهربائية والحاسوبية بجامعة واشنطن، وزميل مدى الحياة في معهد مهندسي الكهرباء والإلكترونيات (IEEE). وهو خبير رائد في معالجة الإشارات الصوتية، حاصل على درجة الدكتوراه من جامعة ستانفورد، ورائد في تطوير مفاهيم أساسية في الشبكات العصبية التلافيفية."
-                  : "An Electrical and Computer Engineering Professor at the University of Washington and an IEEE Life Fellow. He is a leading expert in audio signal processing with a PhD from Stanford University and pioneered key concepts in convolutional neural networks.",
-                linkedin: "https://people.ece.uw.edu/atlas/",
-                image: withBasePath('/images/prof-les-atlas.png'),
-              },
-              {
-                name: isArabic ? "تامر فهمي" : "Tamer Fahmy",
-                role: isArabic ? "مستشار اللوائح التنظيمية" : "MENA Regulatory Advisor",
-                description: isArabic
-                  ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية لدى شركتي فيليبس ودراغر. حاصل على ماجستير إدارة أعمال من كلية إس بي جاين للإدارة العالمية، وبكالوريوس في هندسة الطب الحيوي من جامعة القاهرة."
-                  : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University.",
-                linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
-                image: withBasePath('/images/tamer-fahmy.png'),
-              },
-            ].map((leader, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom"
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <div className="aspect-square overflow-hidden rounded-t-lg">
-                  <img
-                    src={leader.image || "/placeholder.svg"}
-                    alt={leader.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">
-                    <a
-                      href={leader.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105 inline-block"
-                    >
-                      {leader.name}
-                    </a>
-                  </CardTitle>
-                  <CardDescription className="text-blue-600 font-medium transition-colors duration-300 group-hover:text-cyan-600">
-                    {leader.role}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 leading-relaxed">{leader.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+         {/* Leadership Section */}
+<section id="leadership" className="py-20 relative">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-16 animate-in fade-in slide-in-from-bottom duration-1000">
+      <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 transition-colors duration-300 hover:text-blue-600">
+        {isArabic ? "القيادة" : "Leadership"}
+      </h3>
+      <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        {isArabic
+          ? "فريق من الخبراء والقادة في مجال الذكاء الاصطناعي والرعاية الصحية"
+          : "Expert team of leaders in AI and healthcare innovation"}
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          name: isArabic ? "أميل خانزادا" : "Amil Khanzada",
+          role: isArabic ? "المؤسس والرئيس التنفيذي" : "Founder & CEO",
+          description: isArabic
+            ? "خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة."
+            : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
+          linkedin: "https://www.linkedin.com/in/amilkhanzada",
+          image: withBasePath('/images/amil-khanzada.png'),
+        },
+        {
+          name: isArabic ? "البروفيسور ليس أطلس" : "Prof. Les Atlas",
+          role: isArabic ? "الشريك المؤسس والمدير التقني" : "Co-Founder & CTO",
+          description: isArabic
+            ? "أستاذ في الهندسة الكهربائية والحاسوبية بجامعة واشنطن، وزميل مدى الحياة في معهد مهندسي الكهرباء والإلكترونيات (IEEE). وهو خبير رائد في معالجة الإشارات الصوتية، حاصل على درجة الدكتوراه من جامعة ستانفورد، ورائد في تطوير مفاهيم أساسية في الشبكات العصبية التلافيفية."
+            : "An Electrical and Computer Engineering Professor at the University of Washington and an IEEE Life Fellow. He is a leading expert in audio signal processing with a PhD from Stanford University and pioneered key concepts in convolutional neural networks.",
+          linkedin: "https://people.ece.uw.edu/atlas/",
+          image: withBasePath('/images/prof-les-atlas.png'),
+        },
+        {
+          name: isArabic ? "تامر فهمي" : "Tamer Fahmy",
+          role: isArabic ? "مستشار اللوائح التنظيمية" : "MENA Regulatory Advisor",
+          description: isArabic
+            ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية لدى شركتي فيليبس ودراغر. حاصل على ماجستير إدارة أعمال من كلية إس بي جاين للإدارة العالمية، وبكالوريوس في هندسة الطب الحيوي من جامعة القاهرة."
+            : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University.",
+          linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
+          image: withBasePath('/images/tamer-fahmy.png'),
+        },
+      ].map((leader, index) => (
+        <Card
+          key={index}
+          className="border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom"
+          style={{ animationDelay: `${index * 200}ms` }}
+        >
+          <div className="aspect-square overflow-hidden rounded-t-lg">
+            <img
+              src={leader.image || "/placeholder.svg"}
+              alt={leader.name}
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
           </div>
-        </div>
-      </section>
+          <CardHeader>
+            <CardTitle className="text-xl">
+              <a
+                href={leader.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 transition-all duration-300 hover:scale-105 inline-block"
+              >
+                {leader.name}
+              </a>
+            </CardTitle>
+            <CardDescription className="text-blue-600 font-medium transition-colors duration-300 group-hover:text-cyan-600">
+              {leader.role}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p className="text-gray-600 leading-relaxed text-justify">
+              {leader.description}
+            </p>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* News Section */}
       <section id="news" className="py-20 bg-white/80 backdrop-blur-sm">
