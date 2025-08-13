@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Nafasay.AI',
+  title: 'Nafasy.AI',
   description: 'Created with Nafasa',
 }
 
