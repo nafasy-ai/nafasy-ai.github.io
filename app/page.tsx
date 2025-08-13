@@ -5,7 +5,6 @@ import { ArrowRight, Play, CheckCircle, Users, Globe, Award, ChevronDown, Menu, 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { withBasePath } from '../utils/basePath';
-
 export default function NafasyAI() {
   const [language, setLanguage] = useState<"english" | "arabic">("english")
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
