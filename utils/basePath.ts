@@ -1,1 +1,1 @@
-export const withBasePath = (path: string) => `/new-nafasa.ai${path}`;
+export const withBasePath = (path: string) => `/nafasy-ai.github.io${path}`;
