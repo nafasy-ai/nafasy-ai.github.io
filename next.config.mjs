@@ -11,8 +11,8 @@ const nextConfig = {
   },
   output: 'export',
   distDir: 'out',
-  basePath: '/new-nafasa.ai', // Important!
-  assetPrefix: '/new-nafasa.ai/', 
+  basePath: '/nafasy-ai.github.io', // Important!
+  assetPrefix: '/nafasy-ai.github.io/', 
 }
 
 export default nextConfig
