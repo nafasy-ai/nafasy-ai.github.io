@@ -348,7 +348,7 @@ export default function NafasyAI() {
       {[
         {
           icon: <Globe className="h-8 w-8 text-blue-600" />,
-          image: require("@/public/images/G1.jpg"),
+          image: require("@/public/images/G11.jpg"),
           imageAlt: isArabic ? "طفل مريض" : "Sick child",
           title: isArabic ? "مجموعة بيانات ضخمة" : "Massive Dataset",
           description: isArabic
@@ -540,7 +540,7 @@ export default function NafasyAI() {
           description: isArabic
             ? "فحص سريع لملايين الحجاج في مناسبات مثل الحج والعمرة للكشف عن الإنفلونزا وRSV وكوفيد-19 قبل حدوث تفشي المرض."
             : "Rapidly screen millions of pilgrims at events like Hajj and Umrah to detect flu, RSV, and COVID-19 before outbreaks can occur",
-          image: withBasePath('/images/G1.jpg'),
+          image: withBasePath('/images/G11.jpg'),
         },
         {
           title: isArabic ? "المطارات ونقاط الحدود" : "Airports & Border Control",
