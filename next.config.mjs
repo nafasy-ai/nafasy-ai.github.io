@@ -27,14 +27,6 @@ const nextConfig = {
   distDir: 'out',
   basePath: isGithubPages ? '/nafasy-ai.github.io' : '',
   assetPrefix: isGithubPages ? '/nafasy-ai.github.io/' : '',
-  async rewrites() {
-    return [
-      {
-        source: '/robots.txt',
-        destination: '/nafasy-ai.github.io/robots.txt', // where the file actually exists
-      },
-    ];
-  },
 };
 
 export default nextConfig;
