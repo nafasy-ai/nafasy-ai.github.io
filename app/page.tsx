@@ -226,7 +226,7 @@ export default function NafasyAI() {
             <div className="bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl p-1 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl">
               <div className="bg-white rounded-xl p-8">
                 <img
-                  src={withBasePath('/images/ai-respiratory-screening-process.png')}
+                  src={withBasePath('/images/ai-respiratory-screening-process.jpg')}
                   alt={
                     isArabic
                       ? "عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
@@ -318,7 +318,7 @@ export default function NafasyAI() {
       >
         <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
           <img
-            src={withBasePath('/images/dubai-heatmap.png')}
+            src={withBasePath('/images/dubai-heatmap.jpg')}
             alt={
               isArabic
                 ? "خريطة حرارية لانتشار الأمراض التنفسية في دبي"
@@ -503,7 +503,7 @@ export default function NafasyAI() {
       >
         <div className="bg-gradient-to-br from-cyan-100 to-blue-100 rounded-2xl p-8 transition-all duration-500 hover:scale-105 hover:shadow-xl">
           <img
-            src={withBasePath('/images/ai-respiratory-screening-process.png')}
+            src={withBasePath('/images/ai-respiratory-screening-process.jpg')}
             alt={
               isArabic
                 ? "مخطط عملية فحص الصحة التنفسية بالذكاء الاصطناعي"
@@ -547,35 +547,35 @@ export default function NafasyAI() {
           description: isArabic
             ? "تنفيذ فحوصات مستهدفة للمسافرين من المناطق عالية الخطورة لتقليل استيراد الأمراض المعدية."
             : "Implement targeted screening of passengers from high-risk regions to reduce the importation of infectious diseases",
-          image: withBasePath('/images/A1.png'),
+          image: withBasePath('/images/A1.jpg'),
         },
         {
           title: isArabic ? "المؤسسات التعليمية" : "Educational Institutions",
           description: isArabic
             ? "تسهيل الفحص المنتظم في المدارس ورياض الأطفال للكشف عن العدوى قبل انتشارها على نطاق واسع بين الأطفال وعائلاتهم."
             : "Facilitate regular screening in schools and early childhood settings to detect infections before they spread widely among children and their families",
-          image: withBasePath('/images/ED1.png'),
+          image: withBasePath('/images/ED1.jpg'),
         },
         {
           title: isArabic ? "الرعاية الصحية والتأمين" : "Healthcare & Insurance",
           description: isArabic
             ? "الدمج في سير العمل بالمستشفيات والعيادات لفحص المرضى الذين يعانون من أعراض تنفسية قبل الانتقال إلى اختبارات أكثر تكلفة، مما يحسن الكفاءة من حيث التكلفة."
             : "Integrate into hospital and clinic workflows to prescreen patients with respiratory symptoms before escalating to more expensive tests, improving cost-efficiency",
-          image: withBasePath('/images/hospital-waiting-room.png'),
+          image: withBasePath('/images/hospital-waiting-room.jpg'),
         },
         {
           title: isArabic ? "الطب عن بُعد والرعاية الصحية النائية" : "Telemedicine & Remote Healthcare",
           description: isArabic
             ? "تعزيز الاستشارات الافتراضية من خلال تمكين الكشف المبكر عن التهابات الجهاز التنفسي، مما يسمح لأولئك في المناطق النائية بالوصول إلى الرعاية الصحية الحرجة."
             : "Enhance virtual consultations by enabling early detection of respiratory infections, allowing those in remote areas to access critical healthcare",
-          image: withBasePath('/images/TM1.png'),
+          image: withBasePath('/images/TM1.jpg'),
         },
         {
           title: isArabic ? "الشركات والمكاتب" : "Corporate & Offices",
           description: isArabic
             ? "فحص الموظفين للحفاظ على بيئة عمل آمنة وتقليل انتشار الأمراض التنفسية في مكان العمل."
             : "Employee screening for safe workplace environments and reducing the spread of respiratory diseases in the workplace",
-          image: withBasePath('/images/CO1.png'),
+          image: withBasePath('/images/CO1.jpg'),
         },
       ].map((useCase, index) => (
         <Card
@@ -635,7 +635,7 @@ export default function NafasyAI() {
             ? "خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة."
             : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
           linkedin: "https://www.linkedin.com/in/amilkhanzada",
-          image: withBasePath('/images/amil-khanzada.png'),
+          image: withBasePath('/images/amil-khanzada.jpg'),
         },
         {
           name: isArabic ? "البروفيسور ليس أطلس" : "Prof. Les Atlas",
@@ -644,7 +644,7 @@ export default function NafasyAI() {
             ? "أستاذ في الهندسة الكهربائية والحاسوبية بجامعة واشنطن، وزميل مدى الحياة في معهد مهندسي الكهرباء والإلكترونيات (IEEE). وهو خبير رائد في معالجة الإشارات الصوتية، حاصل على درجة الدكتوراه من جامعة ستانفورد، ورائد في تطوير مفاهيم أساسية في الشبكات العصبية التلافيفية."
             : "An Electrical and Computer Engineering Professor at the University of Washington and an IEEE Life Fellow. He is a leading expert in audio signal processing with a PhD from Stanford University and pioneered key concepts in convolutional neural networks.",
           linkedin: "https://people.ece.uw.edu/atlas/",
-          image: withBasePath('/images/prof-les-atlas.png'),
+          image: withBasePath('/images/prof-les-atlas.jpg'),
         },
         {
           name: isArabic ? "تامر فهمي" : "Tamer Fahmy",
@@ -653,7 +653,7 @@ export default function NafasyAI() {
             ? "مستشار ذو خبرة تزيد عن 20 عامًا في قطاع الرعاية الصحية لدى شركتي فيليبس ودراغر. حاصل على ماجستير إدارة أعمال من كلية إس بي جاين للإدارة العالمية، وبكالوريوس في هندسة الطب الحيوي من جامعة القاهرة."
             : "An experienced advisor with over 20 years in the healthcare industry at Philips and Dräger. He holds an MBA from SP Jain School of Global Management and a BSc in Biomedical Engineering from Cairo University.",
           linkedin: "https://ae.linkedin.com/in/tamer-fahmy-b4468614",
-          image: withBasePath('/images/tamer-fahmy.png'),
+          image: withBasePath('/images/tamer-fahmy.jpg'),
         },
       ].map((leader, index) => (
         <Card
