@@ -628,7 +628,7 @@ export default function NafasyAI() {
       {[
         {
           name: isArabic ? "أميل خانزادا" : "Amil Khanzada",
-          role: isArabic ? "المؤسس والرئيس التنفيذي" : "Founder & CEO",
+          role: isArabic ? "المؤسس والرئيس التنفيذي" : "Founder",
           description: isArabic
             ? "خريج سابق من جامعتي بيركلي وستانفورد (ماجستير إدارة أعمال/ماجستير علوم حاسوب)، يتمتع بخبرة 15 عامًا في وادي السيليكون وطوكيو وجنوب آسيا وأمريكا الجنوبية في تطوير البرمجيات وإدارة المنتجات، منها 5 سنوات في قيادة شركة ناشئة للأجهزة الطبية تعتمد على الذكاء الاصطناعي. خبير في مجالات DevOps، وخصوصية البيانات، والأمن السيبراني، والبحوث السريرية، وله شراكات استراتيجية مع جامعات وحكومات في الولايات المتحدة الأمريكية واليابان والإمارات العربية المتحدة."
             : "Former Berkeley/Stanford (MBA/MSCS) with 15 years’ experience across Silicon Valley, Tokyo, South Asia, and South America in software development, product management including 5 years leading an AI-driven medical-device startup. Expert in DevOps, data privacy, cybersecurity, and clinical research, with strategic university and government partnerships in the US, Japan, and UAE.",
@@ -637,7 +637,7 @@ export default function NafasyAI() {
         },
         {
           name: isArabic ? "البروفيسور ليس أطلس" : "Prof. Les Atlas",
-          role: isArabic ? "الشريك المؤسس والمدير التقني" : "Co-Founder & CTO",
+          role: isArabic ? "الشريك المؤسس والمدير التقني" : "Co-Founder & Chief Scientist",
           description: isArabic
             ? "أستاذ في الهندسة الكهربائية والحاسوبية بجامعة واشنطن، وزميل مدى الحياة في معهد مهندسي الكهرباء والإلكترونيات (IEEE). وهو خبير رائد في معالجة الإشارات الصوتية، حاصل على درجة الدكتوراه من جامعة ستانفورد، ورائد في تطوير مفاهيم أساسية في الشبكات العصبية التلافيفية."
             : "An Electrical and Computer Engineering Professor at the University of Washington and an IEEE Life Fellow. He is a leading expert in audio signal processing with a PhD from Stanford University and pioneered key concepts in convolutional neural networks.",
