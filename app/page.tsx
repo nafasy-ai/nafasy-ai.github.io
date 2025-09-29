@@ -281,8 +281,6 @@ export default function NafasyAI() {
       <section id="about" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-            {/* Text Section */}
             <div
               className={`${isArabic ? "order-1 lg:order-2" : "order-1 lg:order-1 text-left"} animate-in fade-in slide-in-from-left duration-1000`}
               dir={isArabic ? "rtl" : "ltr"}
