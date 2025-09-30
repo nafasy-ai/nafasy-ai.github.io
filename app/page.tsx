@@ -651,17 +651,26 @@ export default function NafasyAI() {
                 name: isArabic ? "أندرو فلوري" : "Andrew Fleury",
                 role: isArabic ? "عضو مجلس الإدارة" : "Board Member",
                 description: isArabic
-                  ? "خريج ستانفورد يتمتع بأكثر من 15 عامًا من الخبرة العالمية عبر اليابان، والصين، وهونغ كونغ، والولايات المتحدة. بصفته المدير العام والرئيس التنفيذي لشركة CJ PARTNERS في طوكيو، يقدم المشورة لشركات التكنولوجيا الحيوية والأدوية حول دخول السوق، والاستراتيجية التنظيمية، وتطوير الأعمال، مع تركيز على الطب التجديدي وعلاجات الخلايا والجينات. يملك أندرو خبرة عميقة في الأعمال عبر الثقافات، والاستشارات المالية، والقيادة على مستوى مجالس الإدارة في قطاع علوم الحياة."
-                  : "Stanford-educated executive with 15+ years of global experience across Japan, China, Hong Kong, and the U.S. As Managing Director & CEO of CJ PARTNERS in Tokyo, he advises biotech and pharma companies on market entry, regulatory strategy, and business development, with a focus on regenerative medicine, cell and gene therapies. Andrew brings deep expertise in cross-cultural business, financial advisory, and board-level leadership in the life sciences sector.",
-                linkedin: "https://www.linkedin.com/in/andrew-fleury",
+                  ? "خريج كورنيل وستانفورد يتمتع بأكثر من 15 عامًا من الخبرة العالمية عبر اليابان، والصين، وهونغ كونغ، والولايات المتحدة. بصفته المدير العام والرئيس التنفيذي لشركة CJ PARTNERS في طوكيو، يقدم المشورة لشركات التكنولوجيا الحيوية والأدوية حول دخول السوق، والاستراتيجية التنظيمية، وتطوير الأعمال، مع تركيز على الطب التجديدي وعلاجات الخلايا والجينات. يملك أندرو خبرة عميقة في الأعمال عبر الثقافات، والاستشارات المالية، والقيادة على مستوى مجالس الإدارة في قطاع علوم الحياة."
+                  : "Cornell- and Stanford-educated executive with 15+ years of global experience across Japan, China, Hong Kong, and the U.S. As Managing Director & CEO of CJ PARTNERS in Tokyo, he advises biotech and pharma companies on market entry, regulatory strategy, and business development, with a focus on regenerative medicine, cell and gene therapies. Andrew brings deep expertise in cross-cultural business, financial advisory, and board-level leadership in the life sciences sector.",
+                linkedin: "https://www.linkedin.com/in/andrewfleury/",
                 image: withBasePath('/images/andrew-fleury.jpg'),
+              },
+
+              {
+                name: isArabic ? "غلين والتر موشرت" : "Glenn Walter Muschert",
+                role: isArabic ? "الصحة العامة وعلم الأوبئة" : "Public Health and Epidemiology",
+                description: isArabic
+                  ? "عالم اجتماع حاصل على درجة الدكتوراه ويتمتع بخبرة تزيد عن 25 عامًا في التدريس والبحث على مستوى العالم في علم الاجتماع الرقمي. يركز عمله على الميتافيرس، عدم المساواة الرقمية، التنمية المستدامة، والحلول الأخلاقية للمشكلات الاجتماعية. شغل مناصب أكاديمية في جامعة بوردو وجامعة ميامي (الولايات المتحدة الأمريكية)، وقدم المشورة لدائرة تنمية المجتمع في أبوظبي، وألّف عدة كتب مؤثرة منها 'التنظير حول الفجوات الرقمية'."
+                  : "PhD-trained sociologist with 25+ years of global teaching and research experience in digital sociology. His work explores the metaverse, digital inequalities, sustainable development, and the ethical resolution of social problems. Formerly at Purdue and Miami University (USA), he has advised the Abu Dhabi Department of Community Development and authored multiple influential books, including Theorizing Digital Divides.",
+                linkedin: "https://www.ku.ac.ae/college-people/glenn-muschert",
+                image: withBasePath('/images/prof-glenn-muschert.jpg'),
               },
 
             ].map((leader, index) => (
               <Card
                 key={index}
-                className={`border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom 
-        ${index === 3 ? "md:col-span-3 md:mx-auto md:w-1/3" : ""}`}
+                className={`border-0 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 group animate-in fade-in slide-in-from-bottom `}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <div className="aspect-square overflow-hidden rounded-t-lg">
@@ -696,8 +705,6 @@ export default function NafasyAI() {
           </div>
         </div>
       </section>
-
-
       {/* News Section */}
       <section id="news" className="py-20 bg-white/80 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
