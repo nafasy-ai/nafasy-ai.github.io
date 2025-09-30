@@ -866,8 +866,18 @@ export default function NafasyAI() {
                 ))}
               </ul>
             </div>
+
+            {/* Contact / Address column */}
+
           </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+          <div>
+            <p className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+              {isArabic
+                ? " دبي إيه آي كامباس، الطابق 3، DIFC Innovation One"
+                : "Dubai AI Campus, Level 3, DIFC Innovation One"}
+            </p>
+          </div>
+          <div className="text-center text-gray-400">
             <p>&copy; 2025 Nafasy.AI. {isArabic ? "جميع الحقوق محفوظة" : "All rights reserved"}.</p>
           </div>
         </div>
