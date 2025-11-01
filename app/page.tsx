@@ -2,6 +2,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { ArrowRight, Play, CheckCircle, Users, Globe, Award, ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,6 +12,33 @@ export default function NafasyAI() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const isArabic = language === "arabic"
+  
+  // Load language from URL params or localStorage on mount
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // First check URL params
+      const params = new URLSearchParams(window.location.search)
+      const langParam = params.get("lang")
+      if (langParam === "arabic" || langParam === "english") {
+        setLanguage(langParam)
+        localStorage.setItem("language", langParam)
+      } else {
+        // Then check localStorage
+        const savedLanguage = localStorage.getItem("language") as "english" | "arabic" | null
+        if (savedLanguage) {
+          setLanguage(savedLanguage)
+        }
+      }
+    }
+  }, [])
+
+  // Save language to localStorage when it changes
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", language)
+    }
+  }, [language])
+
   // Mouse tracking for interactive background
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -252,9 +280,9 @@ export default function NafasyAI() {
               { number: "84%", label: isArabic ? "دقة الكشف" : "Detection Accuracy" },
               { number: "4,500+", label: isArabic ? "مستخدم تجريبي" : "Beta Users" },
             ].map((stat, index) => {
-              const toArabicNumbers = (num) => {
+              const toArabicNumbers = (num: string): string => {
                 const arabicDigits = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"];
-                return num.replace(/[0-9]/g, (digit) => arabicDigits[digit]);
+                return num.replace(/[0-9]/g, (digit: string) => arabicDigits[parseInt(digit, 10)]);
               };
 
               const displayNumber = isArabic ? toArabicNumbers(stat.number) : stat.number;
@@ -845,6 +873,30 @@ export default function NafasyAI() {
                     </button>
                   </li>
                 ))}
+                <li>
+                  <Link
+                    href="/cookie-policy"
+                    className="hover:text-white transition-all duration-300 hover:translate-x-1 block"
+                  >
+                    {isArabic ? "سياسة ملفات التعريف" : "Cookie Policy"}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/privacy-notice"
+                    className="hover:text-white transition-all duration-300 hover:translate-x-1 block"
+                  >
+                    {isArabic ? "إشعار الخصوصية" : "Privacy Notice"}
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms-of-use"
+                    className="hover:text-white transition-all duration-300 hover:translate-x-1 block"
+                  >
+                    {isArabic ? "شروط الاستخدام" : "Terms of Use"}
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
