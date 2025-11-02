@@ -2,41 +2,51 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import CookieConsent from "@/components/CookieConsent"; // Update import path
 
 export default function CookiePolicy() {
   const [language, setLanguage] = useState<"english" | "arabic">("english");
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const isArabic = language === "arabic";
 
+  // Language detection useEffect
   useEffect(() => {
-    // Check localStorage for language preference
     if (typeof window !== "undefined") {
-      const savedLanguage = localStorage.getItem("language") as "english" | "arabic" | null;
-      if (savedLanguage) {
-        setLanguage(savedLanguage);
+      // Check URL params first
+      const params = new URLSearchParams(window.location.search);
+      const langParam = params.get("lang");
+
+      if (langParam === "arabic" || langParam === "english") {
+        setLanguage(langParam);
+        localStorage.setItem("language", langParam);
       } else {
-        // Check URL params
-        const params = new URLSearchParams(window.location.search);
-        const langParam = params.get("lang");
-        if (langParam === "arabic" || langParam === "english") {
-          setLanguage(langParam);
+        // Check localStorage
+        const savedLanguage = localStorage.getItem("language") as "english" | "arabic" | null;
+        if (savedLanguage === "arabic" || savedLanguage === "english") {
+          setLanguage(savedLanguage);
         }
       }
     }
   }, []);
 
-  // Mouse tracking for interactive background
+  // Save language preference when it changes
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+    if (typeof window !== "undefined") {
+      localStorage.setItem("language", language);
+      // Update URL with language parameter
+      const url = new URL(window.location.href);
+      url.searchParams.set("lang", language);
+      window.history.replaceState({}, "", url.toString());
+    }
+  }, [language]);
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, []);
+  // Function to toggle language
+  const toggleLanguage = () => {
+    setLanguage((prev) => (prev === "english" ? "arabic" : "english"));
+  };
 
   return (
-    <div className={`min-h-screen relative overflow-hidden ${isArabic ? "rtl" : "ltr text-left"}`} dir={isArabic ? "rtl" : "ltr"}>
+    <div className={`min-h-screen relative overflow-hidden ${isArabic ? "rtl" : "ltr"}`} dir={isArabic ? "rtl" : "ltr"}>
       {/* Animated Background */}
       <div className="fixed inset-0 -z-10">
         {/* Base gradient */}
@@ -106,22 +116,22 @@ export default function CookiePolicy() {
           <div className="bg-white/80 backdrop-blur-md shadow-xl rounded-2xl p-8 lg:p-12 animate-in fade-in slide-in-from-bottom duration-1000">
             <h1 className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-8 animate-in fade-in slide-in-from-bottom duration-1000 delay-200 ${isArabic ? "text-right" : "text-center"}`}>
               {isArabic ? "سياسة ملفات التعريف" : "Cookie Policy"}
-        </h1>
+            </h1>
 
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-gray-600 leading-relaxed mb-8 text-justify animate-in fade-in slide-in-from-bottom duration-1000 delay-400">
                 {isArabic
                   ? "تشرح سياسة ملفات التعريف هذه كيفية استخدام شركة نفَسي.أي آي المحدودة (\"نفَسي.أي آي\"، \"نحن\"، \"نا\"، أو \"لنا\") لملفات تعريف الارتباط والتقنيات المشابهة على موقعنا الإلكتروني، "
                   : 'This Cookie Policy explains how Nafasy.AI Limited ("Nafasy.AI", "we", "us", or "our") uses cookies and similar technologies on our website, '}
-                <a 
-                  href="https://nafasy.ai/" 
-                  target="_blank" 
+                <a
+                  href="https://nafasy.ai/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors duration-300"
                 >
                   https://nafasy.ai/
                 </a>
-          {isArabic
+                {isArabic
                   ? " (الـ\"موقع\")."
                   : ' (the "Website").'}
               </p>
@@ -153,7 +163,7 @@ export default function CookiePolicy() {
                   {isArabic ? "3. أنواع ملفات التعريف التي نستخدمها" : "3. Types of Cookies We Use"}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
-          {isArabic
+                  {isArabic
                     ? "نستخدم الأنواع التالية من ملفات تعريف الارتباط على موقعنا:"
                     : "We use the following types of cookies on our Website:"}
                 </p>
@@ -233,18 +243,18 @@ export default function CookiePolicy() {
                   {isArabic
                     ? "لمعرفة المزيد حول ملفات تعريف الارتباط، بما في ذلك كيفية رؤية ملفات تعريف الارتباط التي تم تعيينها وكيفية إدارتها وحذفها، قم بزيارة "
                     : "To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visit "}
-                  <a 
-                    href="https://www.aboutcookies.org" 
-                    target="_blank" 
+                  <a
+                    href="https://www.aboutcookies.org"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors duration-300"
                   >
                     www.aboutcookies.org
                   </a>
                   {isArabic ? " أو " : " or "}
-                  <a 
-                    href="https://www.allaboutcookies.org" 
-                    target="_blank" 
+                  <a
+                    href="https://www.allaboutcookies.org"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors duration-300"
                   >
@@ -277,8 +287,8 @@ export default function CookiePolicy() {
                 <div className={`${isArabic ? "text-right" : "text-left"} bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 shadow-md transition-all duration-300 hover:shadow-lg`}>
                   <p className="text-lg text-gray-600 mb-2">
                     <span className="font-semibold text-gray-900">{isArabic ? "البريد الإلكتروني:" : "Email:"}</span>{" "}
-                    <a 
-                      href="mailto:dpo@nafasy.ai" 
+                    <a
+                      href="mailto:dpo@nafasy.ai"
                       className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors duration-300"
                     >
                       dpo@nafasy.ai
@@ -289,16 +299,16 @@ export default function CookiePolicy() {
             </div>
 
             <div className={`${isArabic ? "text-right" : "text-center"} mt-12 pt-8 border-t border-gray-200`}>
-              <Link 
+              <Link
                 href={`/?lang=${language}`}
                 className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
-            {isArabic ? "العودة إلى الصفحة الرئيسية" : "Return to Home"}
-          </Link>
+                {isArabic ? "العودة إلى الصفحة الرئيسية" : "Return to Home"}
+              </Link>
             </div>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
 
       {/* Custom CSS for animations */}
       <style jsx>{`
@@ -324,6 +334,9 @@ export default function CookiePolicy() {
           animation: animate-gradient 3s ease infinite;
         }
       `}</style>
+
+      {/* Add CookieConsent component with language prop */}
+      <CookieConsent language={language} />
     </div>
   );
 }
