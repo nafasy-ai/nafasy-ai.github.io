@@ -7,37 +7,12 @@ import { ArrowRight, Play, CheckCircle, Users, Globe, Award, ChevronDown, Menu, 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { withBasePath } from '../utils/basePath';
+import { useLanguage } from "@/context/LanguageContext";
 export default function NafasyAI() {
-  const [language, setLanguage] = useState<"english" | "arabic">("english")
+  const { language, setLanguage } = useLanguage() // Use context instead of local state
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const isArabic = language === "arabic"
-  
-  // Load language from URL params or localStorage on mount
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      // First check URL params
-      const params = new URLSearchParams(window.location.search)
-      const langParam = params.get("lang")
-      if (langParam === "arabic" || langParam === "english") {
-        setLanguage(langParam)
-        localStorage.setItem("language", langParam)
-      } else {
-        // Then check localStorage
-        const savedLanguage = localStorage.getItem("language") as "english" | "arabic" | null
-        if (savedLanguage) {
-          setLanguage(savedLanguage)
-        }
-      }
-    }
-  }, [])
-
-  // Save language to localStorage when it changes
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("language", language)
-    }
-  }, [language])
 
   // Mouse tracking for interactive background
   useEffect(() => {
