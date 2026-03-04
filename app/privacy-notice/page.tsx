@@ -328,7 +328,87 @@ export default function PrivacyNotice() {
 
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1100">
                 <h2 className={`text-2xl lg:text-3xl font-bold text-blue-600 mb-4 mt-8 transition-colors duration-300 hover:text-blue-700 ${isArabic ? "text-right" : "text-left"}`}>
-                  {isArabic ? "8. حقوقك في حماية البيانات" : "8. Your Data Protection Rights"}
+                  {isArabic ? "8. الشفافية بشأن أنظمة الذكاء الاصطناعي والأنظمة المستقلة" : "8. Transparency Regarding AI and Autonomous Systems"}
+                </h2>
+                <p className="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
+                  {isArabic
+                    ? "في نفَسي.أي آي، نؤمن بحقك في فهم كيفية استخدام الذكاء الاصطناعي في عملنا. يشرح هذا القسم ممارساتنا المتعلقة بالذكاء الاصطناعي بلغة واضحة، بما يتوافق مع لائحة حماية بيانات DIFC رقم 10."
+                    : "At Nafasy.AI, we believe you have the right to understand how artificial intelligence is used in our work. This section explains our AI practices in plain language, in alignment with DIFC Data Protection Regulation 10."}
+                </p>
+
+                <div className="space-y-4">
+                  {/* What Our AI Does */}
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 shadow-md">
+                    <p className="font-semibold text-gray-900 mb-2 text-lg">
+                      {isArabic ? "ما يفعله ذكاءنا الاصطناعي:" : "What Our AI Does:"}
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                      {isArabic
+                        ? "تستخدم تقنيتنا الأساسية الذكاء الاصطناعي لتحليل الأصوات التنفسية — وتحديدًا التسجيلات الصوتية لسعالك وتنفسك. من خلال تحديد الأنماط الصوتية الدقيقة، يهدف نموذج الذكاء الاصطناعي لدينا إلى اكتشاف المؤشرات الحيوية المرتبطة بالحالات التنفسية مثل كوفيد-19 والإنفلونزا والـ RSV."
+                        : "Our core technology uses AI to analyze respiratory sounds — specifically, audio recordings of your cough and breathing. By identifying subtle acoustic patterns within these sounds, our AI model is designed to detect biomarkers associated with respiratory conditions such as COVID-19, influenza, and RSV."}
+                    </p>
+                  </div>
+
+                  {/* Human-Defined Purposes and Constraints */}
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 shadow-md">
+                    <p className="font-semibold text-gray-900 mb-2 text-lg">
+                      {isArabic ? "الأغراض والقيود المحددة من قِبل الإنسان:" : "Human-Defined Purposes and Constraints:"}
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                      {isArabic
+                        ? "لا يعمل نظام الذكاء الاصطناعي لدينا بشكل مستقل ولا يتخذ قرارات ذاتية. يعمل بصرامة ضمن الأغراض والقيود التشغيلية التي يحددها فريقنا البشري البحثي والسريري، بما يتوافق مع الإطار التنظيمي الذي أودعناه لدى DIFC. دور الذكاء الاصطناعي هو إجراء التحليل الصوتي وتوليد درجة احتمالية؛ ولا يضع تشخيصات سريرية. يتم تفسير جميع مخرجات الذكاء الاصطناعي والتصرف بناءً عليها حصريًا من قِبل متخصصين مؤهلين."
+                        : "Our AI system does not operate autonomously or make independent decisions. It functions strictly within purposes and operational constraints defined by our human research and clinical teams, consistent with the regulatory framework we have filed with the DIFC. The AI's role is to perform acoustic analysis and generate a probability score; it does not make clinical diagnoses. All AI outputs are interpreted and acted upon exclusively by qualified professionals."}
+                    </p>
+                  </div>
+
+                  {/* Human-in-the-Loop Oversight */}
+                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 shadow-md">
+                    <p className="font-semibold text-gray-900 mb-2 text-lg">
+                      {isArabic ? "الرقابة البشرية في الحلقة:" : "Human-in-the-Loop Oversight:"}
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                      {isArabic
+                        ? "نحافظ على رقابة بشرية صارمة على جميع عمليات الذكاء الاصطناعي لدينا. يتم التحقق من النتائج التي يولدها الذكاء الاصطناعي بشكل منهجي مقابل المعايير الذهبية السريرية — وتحديدًا نتائج اختبارات PCR المؤكدة مختبريًا — لضمان الدقة والموثوقية. يُعدّ هذا الإطار البشري الرقابي أساسيًا لمنهجية بحثنا والتزامنا بسلامة المرضى."
+                        : "We maintain rigorous human oversight of all our AI processes. AI-generated findings are systematically validated against clinical gold standards — specifically, laboratory-confirmed PCR test results — to ensure accuracy and reliability. This human-in-the-loop framework is fundamental to our research methodology and our commitment to patient safety."}
+                    </p>
+                  </div>
+
+                  {/* Right to Erasure and AI Model Limitations */}
+                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200 shadow-md">
+                    <p className="font-semibold text-gray-900 mb-2 text-lg">
+                      {isArabic ? "حقك في المحو والقيود التقنية لنماذج الذكاء الاصطناعي:" : "Your Right to Erasure and AI Model Technical Limitations:"}
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                      {isArabic
+                        ? "يحق لك طلب محو بياناتك الشخصية. إذا مارست هذا الحق، فسنحذف بياناتك الخام القابلة للتحديد — بما في ذلك تسجيلك الصوتي الأصلي — من أنظمتنا فورًا. ومع ذلك، نريد أن نكون شفافين بشأن قيد تقني مهم: بمجرد إخضاع بياناتك للتجهيل الكامل (جعلها غير قابلة للتعريف بأي شكل) واستخدامها في تدريب المعاملات المكتسبة لنموذج الذكاء الاصطناعي (الأوزان الرياضية)، يصبح من المستحيل تقنيًا عزل تأثيرها وإزالته من تلك الأوزان — فهذه خاصية متأصلة في طريقة بناء نماذج التعلم الآلي. نريد أن نؤكد لك أن أي بيانات في هذه المرحلة لم تعد بيانات شخصية بموجب القانون — لا يمكن استخدامها للتعريف بك، ولا تحتفظ بأي صلة بهويتك. وبالتالي، يتم احترام حقك في المحو بالكامل فيما يتعلق بجميع البيانات القابلة للتعريف التي نحتفظ بها."
+                        : "You have the right to request the erasure of your Personal Data. If you exercise this right, we will promptly delete your identifiable raw data — including your original audio recording — from our systems. However, we want to be transparent about an important technical limitation: once your data has been fully anonymized (rendered non-identifiable in any form) and used to contribute to the training of an AI model's learned parameters (its mathematical weights), it is technically impossible to isolate and remove its influence from those weights — this is an inherent characteristic of how machine learning models are built. We want to assure you that any data at this stage is no longer Personal Data under law — it cannot be used to identify you and retains no link to your identity. Your right to erasure is therefore fully honoured with respect to all identifiable data we hold."}
+                    </p>
+                  </div>
+
+                  {/* DPO Contact for AI Queries */}
+                  <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-xl border-2 border-indigo-200 shadow-md">
+                    <p className="font-semibold text-gray-900 mb-2 text-lg">
+                      {isArabic ? "تواصل مع مسؤول حماية البيانات للاستفسارات المتعلقة بالذكاء الاصطناعي:" : "Contact Our DPO for AI-Related Queries:"}
+                    </p>
+                    <p className="text-lg text-gray-600 leading-relaxed mb-3 text-justify">
+                      {isArabic
+                        ? "إذا كان لديك أي أسئلة حول ممارساتنا المتعلقة بالذكاء الاصطناعي، أو ترغب في ممارسة حقوق حماية البيانات الخاصة بك فيما يتعلق بمعالجة الذكاء الاصطناعي، يرجى التواصل مع مسؤول حماية البيانات لدينا مباشرة:"
+                        : "If you have any questions about our AI practices or wish to exercise your data protection rights in relation to AI processing, please contact our Data Protection Officer directly:"}
+                    </p>
+                    <div className={`${isArabic ? "text-right" : "text-left"}`}>
+                      <p className="font-semibold text-gray-900">Amil Khanzada</p>
+                      <p className="text-gray-700 mb-1">{isArabic ? "مسؤول حماية البيانات" : "Data Protection Officer"}</p>
+                      <a href="mailto:dpo@nafasy.ai" className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors duration-300">
+                        dpo@nafasy.ai
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1200">
+                <h2 className={`text-2xl lg:text-3xl font-bold text-blue-600 mb-4 mt-8 transition-colors duration-300 hover:text-blue-700 ${isArabic ? "text-right" : "text-left"}`}>
+                  {isArabic ? "9. حقوقك في حماية البيانات" : "9. Your Data Protection Rights"}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-4 text-justify">
                   {isArabic
@@ -353,7 +433,7 @@ export default function PrivacyNotice() {
 
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1200">
                 <h2 className={`text-2xl lg:text-3xl font-bold text-blue-600 mb-4 mt-8 transition-colors duration-300 hover:text-blue-700 ${isArabic ? "text-right" : "text-left"}`}>
-                  {isArabic ? "9. سياستنا تجاه الأطفال" : "9. Our Policy Towards Children"}
+                  {isArabic ? "10. سياستنا تجاه الأطفال" : "10. Our Policy Towards Children"}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   {isArabic
@@ -364,7 +444,7 @@ export default function PrivacyNotice() {
 
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1300">
                 <h2 className={`text-2xl lg:text-3xl font-bold text-blue-600 mb-4 mt-8 transition-colors duration-300 hover:text-blue-700 ${isArabic ? "text-right" : "text-left"}`}>
-                  {isArabic ? "10. تغييرات على إشعار الخصوصية هذا" : "10. Changes to This Privacy Notice"}
+                  {isArabic ? "11. تغييرات على إشعار الخصوصية هذا" : "11. Changes to This Privacy Notice"}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed text-justify">
                   {isArabic
@@ -375,7 +455,7 @@ export default function PrivacyNotice() {
 
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1400">
                 <h2 className={`text-2xl lg:text-3xl font-bold text-blue-600 mb-4 mt-8 transition-colors duration-300 hover:text-blue-700 ${isArabic ? "text-right" : "text-left"}`}>
-                  {isArabic ? "11. اتصل بنا ومسؤول حماية البيانات لدينا (DPO)" : "11. Contact Us & Our Data Protection Officer (DPO)"}
+                  {isArabic ? "12. اتصل بنا ومسؤول حماية البيانات لدينا (DPO)" : "12. Contact Us & Our Data Protection Officer (DPO)"}
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-4 text-justify">
                   {isArabic
