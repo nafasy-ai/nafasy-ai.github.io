@@ -326,85 +326,202 @@ export default function PrivacyNotice() {
                 </p>
               </section>
 
+              {/* ── SECTION 8 ─────────────────────────────────────────────── */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1100">
-                <h2 className={`text-2xl lg:text-3xl font-bold text-blue-600 mb-4 mt-8 transition-colors duration-300 hover:text-blue-700 ${isArabic ? "text-right" : "text-left"}`}>
-                  {isArabic ? "8. الشفافية بشأن أنظمة الذكاء الاصطناعي والأنظمة المستقلة" : "8. Transparency Regarding AI and Autonomous Systems"}
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-6 text-justify">
-                  {isArabic
-                    ? "في نفَسي.أي آي، نؤمن بحقك في فهم كيفية استخدام الذكاء الاصطناعي في عملنا. يشرح هذا القسم ممارساتنا المتعلقة بالذكاء الاصطناعي بلغة واضحة، بما يتوافق مع لائحة حماية بيانات DIFC رقم 10."
-                    : "At Nafasy.AI, we believe you have the right to understand how artificial intelligence is used in our work. This section explains our AI practices in plain language, in alignment with DIFC Data Protection Regulation 10."}
-                </p>
 
-                <div className="space-y-4">
-                  {/* What Our AI Does */}
-                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 shadow-md">
-                    <p className="font-semibold text-gray-900 mb-2 text-lg">
-                      {isArabic ? "ما يفعله ذكاءنا الاصطناعي:" : "What Our AI Does:"}
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                      {isArabic
-                        ? "تستخدم تقنيتنا الأساسية الذكاء الاصطناعي لتحليل الأصوات التنفسية — وتحديدًا التسجيلات الصوتية لسعالك وتنفسك. من خلال تحديد الأنماط الصوتية الدقيقة، يهدف نموذج الذكاء الاصطناعي لدينا إلى اكتشاف المؤشرات الحيوية المرتبطة بالحالات التنفسية مثل كوفيد-19 والإنفلونزا والـ RSV."
-                        : "Our core technology uses AI to analyze respiratory sounds — specifically, audio recordings of your cough and breathing. By identifying subtle acoustic patterns within these sounds, our AI model is designed to detect biomarkers associated with respiratory conditions such as COVID-19, influenza, and RSV."}
-                    </p>
+                {/* Section header with DIFC Reg 10 badge */}
+                <div className={`flex flex-wrap items-center gap-3 mt-8 mb-3 ${isArabic ? "justify-end" : ""}`}>
+                  <h2 className="text-2xl lg:text-3xl font-bold text-blue-600 transition-colors duration-300 hover:text-blue-700">
+                    {isArabic ? "8. الشفافية بشأن أنظمة الذكاء الاصطناعي والأنظمة المستقلة" : "8. Transparency Regarding AI and Autonomous Systems"}
+                  </h2>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-blue-600 text-white shadow-sm tracking-wide whitespace-nowrap">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    DIFC Reg 10
+                  </span>
+                </div>
+
+                {/* Intro with accent border */}
+                <div className={`${isArabic ? "border-r-4 pr-5 rounded-r-xl" : "border-l-4 pl-5 rounded-l-xl"} border-blue-400 bg-blue-50/60 py-4 mb-8`}>
+                  <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                    {isArabic
+                      ? "في نفَسي.أي آي، نؤمن بحقك في فهم كيفية استخدام الذكاء الاصطناعي في عملنا. يشرح هذا القسم ممارساتنا المتعلقة بالذكاء الاصطناعي بلغة واضحة، بما يتوافق مع لائحة حماية بيانات DIFC رقم 10."
+                      : "At Nafasy.AI, we believe you have the right to understand how artificial intelligence is used in our work. This section explains our AI practices in plain language, in alignment with DIFC Data Protection Regulation 10."}
+                  </p>
+                </div>
+
+                {/* AI Principles at a Glance — 3 tiles */}
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+                  {/* Tile 1 */}
+                  <div className="flex flex-col items-center text-center bg-gradient-to-br from-blue-600 to-blue-700 text-white p-5 rounded-2xl shadow-lg">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <rect x="5" y="2" width="14" height="20" rx="2" />
+                        <line x1="9" y1="9" x2="15" y2="9" /><line x1="9" y1="13" x2="15" y2="13" /><line x1="9" y1="17" x2="12" y2="17" />
+                      </svg>
+                    </div>
+                    <p className="font-bold text-base">{isArabic ? "مدعوم بالذكاء الاصطناعي" : "AI-Assisted"}</p>
+                    <p className="text-xs text-blue-100 mt-1 leading-snug">{isArabic ? "يدعم القرارات السريرية ولا يحل محلها" : "Supports decisions, never replaces clinicians"}</p>
+                  </div>
+                  {/* Tile 2 */}
+                  <div className="flex flex-col items-center text-center bg-gradient-to-br from-indigo-600 to-blue-600 text-white p-5 rounded-2xl shadow-lg">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                        <circle cx="9" cy="7" r="4" />
+                        <polyline points="16 11 18 13 22 9" />
+                      </svg>
+                    </div>
+                    <p className="font-bold text-base">{isArabic ? "الإشراف البشري" : "Human Oversight"}</p>
+                    <p className="text-xs text-indigo-100 mt-1 leading-snug">{isArabic ? "متخصصون مؤهلون يراجعون جميع مخرجات الذكاء الاصطناعي" : "Qualified professionals review all AI outputs"}</p>
+                  </div>
+                  {/* Tile 3 */}
+                  <div className="flex flex-col items-center text-center bg-gradient-to-br from-cyan-600 to-teal-600 text-white p-5 rounded-2xl shadow-lg">
+                    <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-3">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <polyline points="9 12 11 14 15 10" />
+                      </svg>
+                    </div>
+                    <p className="font-bold text-base">{isArabic ? "الخصوصية أولاً" : "Privacy First"}</p>
+                    <p className="text-xs text-cyan-100 mt-1 leading-snug">{isArabic ? "امتثال كامل للائحة DIFC رقم 10" : "Full compliance with DIFC Regulation 10"}</p>
+                  </div>
+                </div>
+
+                {/* Detail cards */}
+                <div className="space-y-5">
+
+                  {/* Card 1 — What Our AI Does */}
+                  <div className="bg-white rounded-2xl border border-blue-100 shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+                    <div className={`bg-gradient-to-r from-blue-600 to-cyan-600 px-6 py-4 flex items-center gap-3 ${isArabic ? "flex-row-reverse" : ""}`}>
+                      <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="3" />
+                          <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                        </svg>
+                      </div>
+                      <p className="font-bold text-white text-base lg:text-lg">
+                        {isArabic ? "ما يفعله ذكاءنا الاصطناعي" : "What Our AI Does"}
+                      </p>
+                    </div>
+                    <div className="px-6 py-5">
+                      <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                        {isArabic
+                          ? "تستخدم تقنيتنا الأساسية الذكاء الاصطناعي لتحليل الأصوات التنفسية — وتحديدًا التسجيلات الصوتية لسعالك وتنفسك. من خلال تحديد الأنماط الصوتية الدقيقة، يهدف نموذج الذكاء الاصطناعي لدينا إلى اكتشاف المؤشرات الحيوية المرتبطة بالحالات التنفسية مثل كوفيد-19 والإنفلونزا والـ RSV."
+                          : "Our core technology uses AI to analyze respiratory sounds — specifically, audio recordings of your cough and breathing. By identifying subtle acoustic patterns within these sounds, our AI model is designed to detect biomarkers associated with respiratory conditions such as COVID-19, influenza, and RSV."}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Human-Defined Purposes and Constraints */}
-                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 shadow-md">
-                    <p className="font-semibold text-gray-900 mb-2 text-lg">
-                      {isArabic ? "الأغراض والقيود المحددة من قِبل الإنسان:" : "Human-Defined Purposes and Constraints:"}
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                      {isArabic
-                        ? "لا يعمل نظام الذكاء الاصطناعي لدينا بشكل مستقل ولا يتخذ قرارات ذاتية. يعمل بصرامة ضمن الأغراض والقيود التشغيلية التي يحددها فريقنا البشري البحثي والسريري، بما يتوافق مع الإطار التنظيمي الذي أودعناه لدى DIFC. دور الذكاء الاصطناعي هو إجراء التحليل الصوتي وتوليد درجة احتمالية؛ ولا يضع تشخيصات سريرية. يتم تفسير جميع مخرجات الذكاء الاصطناعي والتصرف بناءً عليها حصريًا من قِبل متخصصين مؤهلين."
-                        : "Our AI system does not operate autonomously or make independent decisions. It functions strictly within purposes and operational constraints defined by our human research and clinical teams, consistent with the regulatory framework we have filed with the DIFC. The AI's role is to perform acoustic analysis and generate a probability score; it does not make clinical diagnoses. All AI outputs are interpreted and acted upon exclusively by qualified professionals."}
-                    </p>
+                  {/* Card 2 — Human-Defined Purposes */}
+                  <div className="bg-white rounded-2xl border border-indigo-100 shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+                    <div className={`bg-gradient-to-r from-indigo-600 to-blue-600 px-6 py-4 flex items-center gap-3 ${isArabic ? "flex-row-reverse" : ""}`}>
+                      <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+                          <circle cx="8" cy="6" r="2" fill="white" stroke="none" />
+                          <circle cx="16" cy="12" r="2" fill="white" stroke="none" />
+                          <circle cx="11" cy="18" r="2" fill="white" stroke="none" />
+                        </svg>
+                      </div>
+                      <p className="font-bold text-white text-base lg:text-lg">
+                        {isArabic ? "الأغراض والقيود المحددة من قِبل الإنسان" : "Human-Defined Purposes and Constraints"}
+                      </p>
+                    </div>
+                    <div className="px-6 py-5">
+                      <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                        {isArabic
+                          ? "لا يعمل نظام الذكاء الاصطناعي لدينا بشكل مستقل ولا يتخذ قرارات ذاتية. يعمل بصرامة ضمن الأغراض والقيود التشغيلية التي يحددها فريقنا البشري البحثي والسريري، بما يتوافق مع الإطار التنظيمي الذي أودعناه لدى DIFC. دور الذكاء الاصطناعي هو إجراء التحليل الصوتي وتوليد درجة احتمالية؛ ولا يضع تشخيصات سريرية. يتم تفسير جميع مخرجات الذكاء الاصطناعي والتصرف بناءً عليها حصريًا من قِبل متخصصين مؤهلين."
+                          : "Our AI system does not operate autonomously or make independent decisions. It functions strictly within purposes and operational constraints defined by our human research and clinical teams, consistent with the regulatory framework we have filed with the DIFC. The AI's role is to perform acoustic analysis and generate a probability score; it does not make clinical diagnoses. All AI outputs are interpreted and acted upon exclusively by qualified professionals."}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Human-in-the-Loop Oversight */}
-                  <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl border border-blue-100 shadow-md">
-                    <p className="font-semibold text-gray-900 mb-2 text-lg">
-                      {isArabic ? "الرقابة البشرية في الحلقة:" : "Human-in-the-Loop Oversight:"}
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                      {isArabic
-                        ? "نحافظ على رقابة بشرية صارمة على جميع عمليات الذكاء الاصطناعي لدينا. يتم التحقق من النتائج التي يولدها الذكاء الاصطناعي بشكل منهجي مقابل المعايير الذهبية السريرية — وتحديدًا نتائج اختبارات PCR المؤكدة مختبريًا — لضمان الدقة والموثوقية. يُعدّ هذا الإطار البشري الرقابي أساسيًا لمنهجية بحثنا والتزامنا بسلامة المرضى."
-                        : "We maintain rigorous human oversight of all our AI processes. AI-generated findings are systematically validated against clinical gold standards — specifically, laboratory-confirmed PCR test results — to ensure accuracy and reliability. This human-in-the-loop framework is fundamental to our research methodology and our commitment to patient safety."}
-                    </p>
+                  {/* Card 3 — Human-in-the-Loop */}
+                  <div className="bg-white rounded-2xl border border-cyan-100 shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+                    <div className={`bg-gradient-to-r from-cyan-600 to-teal-600 px-6 py-4 flex items-center gap-3 ${isArabic ? "flex-row-reverse" : ""}`}>
+                      <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                          <circle cx="12" cy="12" r="3" />
+                        </svg>
+                      </div>
+                      <p className="font-bold text-white text-base lg:text-lg">
+                        {isArabic ? "الرقابة البشرية في الحلقة" : "Human-in-the-Loop Oversight"}
+                      </p>
+                    </div>
+                    <div className="px-6 py-5">
+                      <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                        {isArabic
+                          ? "نحافظ على رقابة بشرية صارمة على جميع عمليات الذكاء الاصطناعي لدينا. يتم التحقق من النتائج التي يولدها الذكاء الاصطناعي بشكل منهجي مقابل المعايير الذهبية السريرية — وتحديدًا نتائج اختبارات PCR المؤكدة مختبريًا — لضمان الدقة والموثوقية. يُعدّ هذا الإطار البشري الرقابي أساسيًا لمنهجية بحثنا والتزامنا بسلامة المرضى."
+                          : "We maintain rigorous human oversight of all our AI processes. AI-generated findings are systematically validated against clinical gold standards — specifically, laboratory-confirmed PCR test results — to ensure accuracy and reliability. This human-in-the-loop framework is fundamental to our research methodology and our commitment to patient safety."}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* Right to Erasure and AI Model Limitations */}
-                  <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-200 shadow-md">
-                    <p className="font-semibold text-gray-900 mb-2 text-lg">
-                      {isArabic ? "حقك في المحو والقيود التقنية لنماذج الذكاء الاصطناعي:" : "Your Right to Erasure and AI Model Technical Limitations:"}
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed text-justify">
-                      {isArabic
-                        ? "يحق لك طلب محو بياناتك الشخصية. إذا مارست هذا الحق، فسنحذف بياناتك الخام القابلة للتحديد — بما في ذلك تسجيلك الصوتي الأصلي — من أنظمتنا فورًا. ومع ذلك، نريد أن نكون شفافين بشأن قيد تقني مهم: بمجرد إخضاع بياناتك للتجهيل الكامل (جعلها غير قابلة للتعريف بأي شكل) واستخدامها في تدريب المعاملات المكتسبة لنموذج الذكاء الاصطناعي (الأوزان الرياضية)، يصبح من المستحيل تقنيًا عزل تأثيرها وإزالته من تلك الأوزان — فهذه خاصية متأصلة في طريقة بناء نماذج التعلم الآلي. نريد أن نؤكد لك أن أي بيانات في هذه المرحلة لم تعد بيانات شخصية بموجب القانون — لا يمكن استخدامها للتعريف بك، ولا تحتفظ بأي صلة بهويتك. وبالتالي، يتم احترام حقك في المحو بالكامل فيما يتعلق بجميع البيانات القابلة للتعريف التي نحتفظ بها."
-                        : "You have the right to request the erasure of your Personal Data. If you exercise this right, we will promptly delete your identifiable raw data — including your original audio recording — from our systems. However, we want to be transparent about an important technical limitation: once your data has been fully anonymized (rendered non-identifiable in any form) and used to contribute to the training of an AI model's learned parameters (its mathematical weights), it is technically impossible to isolate and remove its influence from those weights — this is an inherent characteristic of how machine learning models are built. We want to assure you that any data at this stage is no longer Personal Data under law — it cannot be used to identify you and retains no link to your identity. Your right to erasure is therefore fully honoured with respect to all identifiable data we hold."}
-                    </p>
+                  {/* Card 4 — Right to Erasure (amber) */}
+                  <div className="bg-white rounded-2xl border-2 border-amber-300 shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg">
+                    <div className={`bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-4 flex items-center gap-3 ${isArabic ? "flex-row-reverse" : ""}`}>
+                      <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="12" cy="12" r="10" />
+                          <line x1="12" y1="8" x2="12" y2="12" />
+                          <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                      </div>
+                      <p className="font-bold text-white text-base lg:text-lg">
+                        {isArabic ? "حقك في المحو والقيود التقنية لنماذج الذكاء الاصطناعي" : "Your Right to Erasure & AI Model Technical Limitations"}
+                      </p>
+                    </div>
+                    <div className="px-6 py-5 bg-amber-50/40">
+                      <p className="text-lg text-gray-600 leading-relaxed text-justify">
+                        {isArabic
+                          ? "يحق لك طلب محو بياناتك الشخصية. إذا مارست هذا الحق، فسنحذف بياناتك الخام القابلة للتحديد — بما في ذلك تسجيلك الصوتي الأصلي — من أنظمتنا فورًا. ومع ذلك، نريد أن نكون شفافين بشأن قيد تقني مهم: بمجرد إخضاع بياناتك للتجهيل الكامل (جعلها غير قابلة للتعريف بأي شكل) واستخدامها في تدريب المعاملات المكتسبة لنموذج الذكاء الاصطناعي (الأوزان الرياضية)، يصبح من المستحيل تقنيًا عزل تأثيرها وإزالته من تلك الأوزان — فهذه خاصية متأصلة في طريقة بناء نماذج التعلم الآلي. نريد أن نؤكد لك أن أي بيانات في هذه المرحلة لم تعد بيانات شخصية بموجب القانون — لا يمكن استخدامها للتعريف بك، ولا تحتفظ بأي صلة بهويتك. وبالتالي، يتم احترام حقك في المحو بالكامل فيما يتعلق بجميع البيانات القابلة للتعريف التي نحتفظ بها."
+                          : "You have the right to request the erasure of your Personal Data. If you exercise this right, we will promptly delete your identifiable raw data — including your original audio recording — from our systems. However, we want to be transparent about an important technical limitation: once your data has been fully anonymized (rendered non-identifiable in any form) and used to contribute to the training of an AI model's learned parameters (its mathematical weights), it is technically impossible to isolate and remove its influence from those weights — this is an inherent characteristic of how machine learning models are built. We want to assure you that any data at this stage is no longer Personal Data under law — it cannot be used to identify you and retains no link to your identity. Your right to erasure is therefore fully honoured with respect to all identifiable data we hold."}
+                      </p>
+                    </div>
                   </div>
 
-                  {/* DPO Contact for AI Queries */}
-                  <div className="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-xl border-2 border-indigo-200 shadow-md">
-                    <p className="font-semibold text-gray-900 mb-2 text-lg">
-                      {isArabic ? "تواصل مع مسؤول حماية البيانات للاستفسارات المتعلقة بالذكاء الاصطناعي:" : "Contact Our DPO for AI-Related Queries:"}
-                    </p>
-                    <p className="text-lg text-gray-600 leading-relaxed mb-3 text-justify">
+                  {/* Card 5 — DPO Contact (dark indigo) */}
+                  <div className="bg-gradient-to-br from-indigo-700 to-blue-700 rounded-2xl shadow-xl p-6 text-white">
+                    <div className={`flex items-center gap-3 mb-4 ${isArabic ? "flex-row-reverse" : ""}`}>
+                      <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                          <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                      </div>
+                      <p className="font-bold text-white text-base lg:text-lg">
+                        {isArabic ? "تواصل مع مسؤول حماية البيانات للاستفسارات المتعلقة بالذكاء الاصطناعي" : "Contact Our DPO for AI-Related Queries"}
+                      </p>
+                    </div>
+                    <p className="text-indigo-200 text-base leading-relaxed mb-5 text-justify">
                       {isArabic
                         ? "إذا كان لديك أي أسئلة حول ممارساتنا المتعلقة بالذكاء الاصطناعي، أو ترغب في ممارسة حقوق حماية البيانات الخاصة بك فيما يتعلق بمعالجة الذكاء الاصطناعي، يرجى التواصل مع مسؤول حماية البيانات لدينا مباشرة:"
                         : "If you have any questions about our AI practices or wish to exercise your data protection rights in relation to AI processing, please contact our Data Protection Officer directly:"}
                     </p>
-                    <div className={`${isArabic ? "text-right" : "text-left"}`}>
-                      <p className="font-semibold text-gray-900">Amil Khanzada</p>
-                      <p className="text-gray-700 mb-1">{isArabic ? "مسؤول حماية البيانات" : "Data Protection Officer"}</p>
-                      <a href="mailto:dpo@nafasy.ai" className="text-blue-600 hover:text-blue-700 hover:underline font-medium transition-colors duration-300">
-                        dpo@nafasy.ai
-                      </a>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-xl p-5">
+                      <div className={`${isArabic ? "text-right" : "text-left"}`}>
+                        <p className="font-bold text-white text-lg">Amil Khanzada</p>
+                        <p className="text-indigo-200 text-sm mb-4">{isArabic ? "مسؤول حماية البيانات" : "Data Protection Officer"}</p>
+                        <a
+                          href="mailto:dpo@nafasy.ai"
+                          className={`inline-flex items-center gap-2 bg-white text-indigo-700 hover:bg-indigo-50 font-semibold px-5 py-2.5 rounded-full transition-colors duration-200 text-sm shadow-md ${isArabic ? "flex-row-reverse" : ""}`}
+                        >
+                          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                          </svg>
+                          dpo@nafasy.ai
+                        </a>
+                      </div>
                     </div>
                   </div>
+
                 </div>
               </section>
+              {/* ── END SECTION 8 ─────────────────────────────────────────── */}
 
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1200">
                 <h2 className={`text-2xl lg:text-3xl font-bold text-blue-600 mb-4 mt-8 transition-colors duration-300 hover:text-blue-700 ${isArabic ? "text-right" : "text-left"}`}>
@@ -480,7 +597,7 @@ export default function PrivacyNotice() {
         </div>
 
             <div className={`${isArabic ? "text-right" : "text-center"} mt-12 pt-8 border-t border-gray-200`}>
-              <Link 
+              <Link
                 href={`/?lang=${language}`}
                 className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
               >
@@ -497,19 +614,19 @@ export default function PrivacyNotice() {
           0%, 100% { transform: translateY(0px) rotate(0deg); }
           50% { transform: translateY(-20px) rotate(180deg); }
         }
-        
+
         @keyframes particle-float {
           0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
           10% { opacity: 1; }
           90% { opacity: 1; }
           100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
-        
+
         @keyframes animate-gradient {
           0%, 100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
         }
-        
+
         .animate-gradient {
           background-size: 200% 200%;
           animation: animate-gradient 3s ease infinite;
