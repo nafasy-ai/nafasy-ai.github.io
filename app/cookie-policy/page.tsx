@@ -74,9 +74,6 @@ export default function CookiePolicy() {
               <h1 className={`text-4xl lg:text-5xl font-bold text-gray-900 mb-3 ${isArabic ? "text-right" : "text-center"}`}>
                 {isArabic ? "سياسة ملفات التعريف" : "Cookie Policy"}
               </h1>
-              <p className="text-gray-500 text-sm mb-6">
-                {isArabic ? "آخر تحديث: مارس 2025 | نفَسي.أي آي المحدودة" : "Last Updated: March 2025 | Nafasy.AI Limited"}
-              </p>
               <div className="flex flex-wrap gap-2 justify-center">
                 <Link href="/privacy-notice" className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200 hover:bg-blue-100 transition-colors">
                   {isArabic ? "إشعار الخصوصية" : "Privacy Notice"}
