@@ -103,7 +103,7 @@ export default function CookiePolicy() {
                 </p>
               </div>
 
-              {/* Section 1 — What Are Cookies */}
+              {/* Section 1:What Are Cookies */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-600">
                 <div className={`flex items-center gap-3 mt-8 mb-5 ${isArabic ? "flex-row-reverse" : ""}`}>
                   <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
@@ -125,7 +125,7 @@ export default function CookiePolicy() {
                 </div>
               </section>
 
-              {/* Section 2 — How We Use Cookies */}
+              {/* Section 2:How We Use Cookies */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-700">
                 <div className={`flex items-center gap-3 mt-8 mb-5 ${isArabic ? "flex-row-reverse" : ""}`}>
                   <div className="w-9 h-9 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
@@ -147,7 +147,7 @@ export default function CookiePolicy() {
                 </div>
               </section>
 
-              {/* Section 3 — Types of Cookies */}
+              {/* Section 3:Types of Cookies */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-800">
                 <div className={`flex items-center gap-3 mt-8 mb-5 ${isArabic ? "flex-row-reverse" : ""}`}>
                   <div className="w-9 h-9 bg-gradient-to-br from-cyan-600 to-teal-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
@@ -254,7 +254,7 @@ export default function CookiePolicy() {
                 </div>
               </section>
 
-              {/* Section 4 — Your Choices */}
+              {/* Section 4:Your Choices */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-900">
                 <div className={`flex items-center gap-3 mt-8 mb-5 ${isArabic ? "flex-row-reverse" : ""}`}>
                   <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
@@ -315,7 +315,7 @@ export default function CookiePolicy() {
                 </p>
               </section>
 
-              {/* Section 5 — Changes */}
+              {/* Section 5:Changes */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1000">
                 <div className={`flex items-center gap-3 mt-8 mb-5 ${isArabic ? "flex-row-reverse" : ""}`}>
                   <div className="w-9 h-9 bg-gradient-to-br from-slate-600 to-blue-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
@@ -337,7 +337,7 @@ export default function CookiePolicy() {
                 </div>
               </section>
 
-              {/* Section 6 — Contact */}
+              {/* Section 6:Contact */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1100">
                 <div className={`flex items-center gap-3 mt-8 mb-5 ${isArabic ? "flex-row-reverse" : ""}`}>
                   <div className="w-9 h-9 bg-gradient-to-br from-indigo-700 to-blue-700 rounded-xl flex items-center justify-center shrink-0 shadow-md">

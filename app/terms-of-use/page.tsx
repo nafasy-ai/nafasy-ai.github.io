@@ -207,8 +207,8 @@ export default function TermsOfUse() {
                   <div className={`${isArabic ? "border-r-4 pr-4" : "border-l-4 pl-4"} border-blue-200 py-1`}>
                     <p className="text-lg text-gray-600 leading-relaxed text-justify">
                       {isArabic
-                        ? "الموقع ومحتواه بالكامل وميزاته ووظائفه—بما في ذلك على سبيل المثال لا الحصر جميع المعلومات والبرمجيات والنصوص والرسومات والشعارات والصور ومقاطع الصوت ونماذج الذكاء الاصطناعي والخوارزميات الأساسية—هي مملوكة لنفَسي.أي آي أو المرخصين لها أو مقدمي المواد الآخرين ومحمية بموجب قوانين حقوق النشر والعلامات التجارية وبراءات الاختراع والأسرار التجارية وغيرها من قوانين الملكية الفكرية أو الملكية."
-                        : "The Website and its entire contents, features, and functionality—including but not limited to all information, software, text, graphics, logos, images, audio clips, and the underlying AI models and algorithms—are owned by Nafasy.AI, its licensors, or other providers of such material and are protected by copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws."}
+                        ? "الموقع ومحتواه بالكامل وميزاته ووظائفه، بما في ذلك على سبيل المثال لا الحصر جميع المعلومات والبرمجيات والنصوص والرسومات والشعارات والصور ومقاطع الصوت ونماذج الذكاء الاصطناعي والخوارزميات الأساسية، هي مملوكة لنفَسي.أي آي أو المرخصين لها أو مقدمي المواد الآخرين ومحمية بموجب قوانين حقوق النشر والعلامات التجارية وبراءات الاختراع والأسرار التجارية وغيرها من قوانين الملكية الفكرية أو الملكية."
+                        : "The Website and its entire contents, features, and functionality, including but not limited to all information, software, text, graphics, logos, images, audio clips, and the underlying AI models and algorithms, are owned by Nafasy.AI, its licensors, or other providers of such material and are protected by copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws."}
                     </p>
                   </div>
                   <p className="text-lg text-gray-600 leading-relaxed text-justify">

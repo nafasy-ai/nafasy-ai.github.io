@@ -390,7 +390,7 @@ export default function PrivacyNotice() {
                 </div>
               </section>
 
-              {/* Section 8 — AI Transparency (DIFC Reg 10) */}
+              {/* Section 8: AI Transparency (DIFC Reg 10) */}
               <section className="mb-10 animate-in fade-in slide-in-from-bottom duration-1000 delay-1100">
                 <div className={`flex items-center gap-3 mt-8 mb-5 ${isArabic ? "flex-row-reverse" : ""}`}>
                   <div className="w-9 h-9 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl flex items-center justify-center shrink-0 shadow-md">
@@ -433,8 +433,8 @@ export default function PrivacyNotice() {
                     <div className="px-6 py-5">
                       <p className="text-lg text-gray-600 leading-relaxed text-justify">
                         {isArabic
-                          ? "تستخدم تقنيتنا الأساسية الذكاء الاصطناعي لتحليل الأصوات التنفسية — وتحديدًا التسجيلات الصوتية لسعالك وتنفسك. من خلال تحديد الأنماط الصوتية الدقيقة، يهدف نموذج الذكاء الاصطناعي لدينا إلى اكتشاف المؤشرات الحيوية المرتبطة بالحالات التنفسية مثل كوفيد-19 والإنفلونزا والـ RSV."
-                          : "Our core technology uses AI to analyze respiratory sounds — specifically, audio recordings of your cough and breathing. By identifying subtle acoustic patterns within these sounds, our AI model is designed to detect biomarkers associated with respiratory conditions such as COVID-19, influenza, and RSV."}
+                          ? "تستخدم تقنيتنا الأساسية الذكاء الاصطناعي لتحليل الأصوات التنفسية، وتحديدًا التسجيلات الصوتية لسعالك وتنفسك. من خلال تحديد الأنماط الصوتية الدقيقة، يهدف نموذج الذكاء الاصطناعي لدينا إلى اكتشاف المؤشرات الحيوية المرتبطة بالحالات التنفسية مثل كوفيد-19 والإنفلونزا والـ RSV."
+                          : "Our core technology uses AI to analyze respiratory sounds, specifically audio recordings of your cough and breathing. By identifying subtle acoustic patterns within these sounds, our AI model is designed to detect biomarkers associated with respiratory conditions such as COVID-19, influenza, and RSV."}
                       </p>
                     </div>
                   </div>
@@ -474,13 +474,13 @@ export default function PrivacyNotice() {
                     <div className="px-6 py-5">
                       <p className="text-lg text-gray-600 leading-relaxed text-justify">
                         {isArabic
-                          ? "نحافظ على رقابة بشرية صارمة على جميع عمليات الذكاء الاصطناعي. يتم التحقق من النتائج التي يولدها الذكاء الاصطناعي بشكل منهجي مقابل المعايير الذهبية السريرية — وتحديدًا نتائج اختبارات PCR المؤكدة مختبريًا. هذا الإطار البشري الرقابي أساسي لمنهجية بحثنا والتزامنا بسلامة المرضى."
-                          : "We maintain rigorous human oversight of all our AI processes. AI-generated findings are systematically validated against clinical gold standards — specifically, laboratory-confirmed PCR test results — to ensure accuracy and reliability. This human-in-the-loop framework is fundamental to our research methodology and our commitment to patient safety."}
+                          ? "نحافظ على رقابة بشرية صارمة على جميع عمليات الذكاء الاصطناعي. يتم التحقق من النتائج التي يولدها الذكاء الاصطناعي بشكل منهجي مقابل المعايير الذهبية السريرية، وتحديدًا نتائج اختبارات PCR المؤكدة مختبريًا. هذا الإطار البشري الرقابي أساسي لمنهجية بحثنا والتزامنا بسلامة المرضى."
+                          : "We maintain rigorous human oversight of all our AI processes. AI-generated findings are systematically validated against clinical gold standards, specifically laboratory-confirmed PCR test results, to ensure accuracy and reliability. This human-in-the-loop framework is fundamental to our research methodology and our commitment to patient safety."}
                       </p>
                     </div>
                   </div>
 
-                  {/* Card 4 — Right to Erasure */}
+                  {/* Card 4: Right to Erasure */}
                   <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-md overflow-hidden transition-shadow duration-300 hover:shadow-lg">
                     <div className={`bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-4 flex items-center gap-3 ${isArabic ? "flex-row-reverse" : ""}`}>
                       <div className="w-9 h-9 bg-white/20 rounded-lg flex items-center justify-center shrink-0">
@@ -493,13 +493,13 @@ export default function PrivacyNotice() {
                     <div className="px-6 py-5 bg-amber-50/30">
                       <p className="text-lg text-gray-600 leading-relaxed text-justify">
                         {isArabic
-                          ? "يحق لك طلب محو بياناتك الشخصية. إذا مارست هذا الحق، فسنحذف بياناتك الخام القابلة للتحديد فورًا. ومع ذلك، بمجرد إخضاع بياناتك للتجهيل الكامل واستخدامها في تدريب نموذج الذكاء الاصطناعي، يصبح من المستحيل تقنيًا عزل تأثيرها من الأوزان الرياضية — وهذه خاصية متأصلة في نماذج التعلم الآلي. أي بيانات في هذه المرحلة لم تعد بيانات شخصية بموجب القانون — لا يمكن استخدامها للتعريف بك. وبالتالي، يتم احترام حقك في المحو بالكامل فيما يتعلق بجميع البيانات القابلة للتعريف التي نحتفظ بها."
-                          : "You have the right to request the erasure of your Personal Data. If you exercise this right, we will promptly delete your identifiable raw data — including your original audio recording — from our systems. However, once your data has been fully anonymized and used to train an AI model's learned parameters (its mathematical weights), it is technically impossible to isolate and remove its influence from those weights — this is an inherent characteristic of how machine learning models are built. Any data at this stage is no longer Personal Data under law — it cannot be used to identify you. Your right to erasure is therefore fully honoured with respect to all identifiable data we hold."}
+                          ? "يحق لك طلب محو بياناتك الشخصية. إذا مارست هذا الحق، فسنحذف بياناتك الخام القابلة للتحديد فورًا. ومع ذلك، بمجرد إخضاع بياناتك للتجهيل الكامل واستخدامها في تدريب نموذج الذكاء الاصطناعي، يصبح من المستحيل تقنيًا عزل تأثيرها من الأوزان الرياضية، وهذه خاصية متأصلة في نماذج التعلم الآلي. أي بيانات في هذه المرحلة لم تعد بيانات شخصية بموجب القانون، لا يمكن استخدامها للتعريف بك. وبالتالي، يتم احترام حقك في المحو بالكامل فيما يتعلق بجميع البيانات القابلة للتعريف التي نحتفظ بها."
+                          : "You have the right to request the erasure of your Personal Data. If you exercise this right, we will promptly delete your identifiable raw data, including your original audio recording, from our systems. However, once your data has been fully anonymized and used to train an AI model's learned parameters (its mathematical weights), it is technically impossible to isolate and remove its influence from those weights. This is an inherent characteristic of how machine learning models are built. Any data at this stage is no longer Personal Data under law and cannot be used to identify you. Your right to erasure is therefore fully honoured with respect to all identifiable data we hold."}
                       </p>
                     </div>
                   </div>
 
-                  {/* Card 5 — DPO AI Contact */}
+                  {/* Card 5: DPO AI Contact */}
                   <div className="bg-gradient-to-br from-indigo-700 to-blue-700 rounded-2xl shadow-xl p-6 text-white">
                     <div className={`flex items-center gap-3 mb-4 ${isArabic ? "flex-row-reverse" : ""}`}>
                       <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center shrink-0">
